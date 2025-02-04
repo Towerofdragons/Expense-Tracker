@@ -7,16 +7,18 @@ namespace Backend.Controllers;
 
   public class TrackerController : Controller {
     // Get /
-    public string Index()
+    public IActionResult Index()
     {
-      return "Hello World";
+      return View();
     }
 
     // Get /Welcome hello world
 
-    public string Welcome(string name){
-      return HtmlEncoder.Default.Encode($"Hello {name}, Welcome.");
-
+    public IActionResult Welcome(string name)
+    {
+      ViewData["name"] = name;
+      return View();
+      // return HtmlEncoder.Default.Encode($"Hello {name}, Welcome.");
     }
 
   }
