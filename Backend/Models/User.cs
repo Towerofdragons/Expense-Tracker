@@ -1,10 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Backend.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Backend.Models
 {
-    public class User
+    public class User : IdentityUser
     {
         [Key]
         public int UserId { get; set; }

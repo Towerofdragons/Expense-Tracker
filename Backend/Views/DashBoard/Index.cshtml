@@ -1,0 +1,37 @@
+@{
+  ViewData["Title"] = "Index";
+}
+@model Backend.Models.IncomeExpenses
+
+<h2>DashBoard</h2>
+
+<div>
+  Total Income - @Model.TotalIncome;
+</div>
+
+<div>
+  Total Expenses - @Model.TotalExpense;
+</div>
+<div>
+  <div>
+    Incomes and Expenses
+    <br>
+    <hr>
+    <h2>Incomes</h2>
+    <ul>
+    @foreach (var income in Model.Income)
+      {
+        <li>@income.Amount - @income.Description</li>
+      }
+    </ul>
+
+    <h2>Expenses</h2>
+    <ul>
+    @foreach (var expense in Model.Expense)
+      {
+        <li>@expense.Amount - @expense.Description</li>
+      }
+    </ul>
+  </div>
+  
+</div>
