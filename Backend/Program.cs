@@ -1,11 +1,37 @@
+using Backend.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Step 1: Configure SQL Server connection
+builder.Services.AddDbContext<ExpenseTrackerDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+
+// Step 2: Add services to the container
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<TrackerDBContext>(
+    options => options.UseInMemoryDatabase("TrackerDB")
+);
+
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<TrackerDBContext>()
+    .AddDefaultTokenProviders();
+
 
 var app = builder.Build();
 
+// Ensure the database is created and seed data is applied
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<TrackerDBContext>();
+    context.Database.EnsureCreated();  // Forces database creation & applies seed data
+}
+
+
 // Configure the HTTP request pipeline.
+// Step 3: Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -16,10 +42,12 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();
 
+// Step 4: Configure Routes
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Tracker}/{action=Index}/{id?}")
