@@ -590,7 +590,6 @@
           "build/net8.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.InMemory/9.0.2": {
         "type": "package",
         "dependencies": {
@@ -609,8 +608,6 @@
           }
         }
       },
-=======
->>>>>>> b472efe23fa191e1f30a5cf27ac7ed3b33468be7
       "Microsoft.EntityFrameworkCore.Relational/9.0.2": {
         "type": "package",
         "dependencies": {
@@ -770,7 +767,6 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.Identity.Core/9.0.2": {
         "type": "package",
         "dependencies": {
@@ -807,8 +803,6 @@
           }
         }
       },
-=======
->>>>>>> b472efe23fa191e1f30a5cf27ac7ed3b33468be7
       "Microsoft.Extensions.Logging/9.0.2": {
         "type": "package",
         "dependencies": {
