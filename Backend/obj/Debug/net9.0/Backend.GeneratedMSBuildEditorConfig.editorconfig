@@ -32,6 +32,22 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/DashBoard/_ExpenseForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXF9FeHBlbnNlRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/DashBoard/_ExpenseTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXF9FeHBlbnNlVGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/DashBoard/_IncomeForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXF9JbmNvbWVGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/DashBoard/_IncomeTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXF9JbmNvbWVUYWJsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

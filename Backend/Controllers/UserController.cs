@@ -37,7 +37,7 @@ namespace Backend.Controllers
     }
   [HttpPost]
     public IActionResult Register(User user)
-    {
+    { // TODO
       if (ModelState.IsValid)
       {
         user.UserId =  _context.Users.Count() + 1; // TODO -- Temp since in memory db doesn't auto increment
