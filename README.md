@@ -9,8 +9,8 @@ A simple and efficient backend for an Expense Tracker application, built with **
 
 ## **🚀 Tech Stack**
 - **Backend:** ASP.NET Core, C#  
-- **Database:** SQL Server (via **Entity Framework Core**)  
-- **ORM:** Entity Framework Core  
+- **Database:** SQL Express Server (via **Entity Framework Core**)  
+- **ORM:** Microsoft Entity Framework Core  
 
 ---
 
