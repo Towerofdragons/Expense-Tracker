@@ -23,6 +23,36 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Signup()
+    {
+        return View();
+    }
+
+    public IActionResult Login()
+    {
+        return View();
+    }
+    public IActionResult IncomeForm()
+    {
+        return PartialView("_IncomeForm");
+    }
+
+    public IActionResult IncomeTable()
+    {
+        return PartialView("_IncomeTable");
+    }
+
+    public IActionResult ExpenseForm()
+    {
+        return PartialView("_ExpenseForm");
+    }
+
+    public IActionResult ExpenseTable()
+    {
+        return PartialView("_ExpenseTable");
+    }
+
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
