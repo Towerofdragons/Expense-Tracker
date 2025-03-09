@@ -4,7 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Step 1: Configure SQL Server connection
+builder.Services.AddDbContext<ExpenseTrackerDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+
+// Step 2: Add services to the container
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<TrackerDBContext>(
     options => options.UseInMemoryDatabase("TrackerDB")
@@ -26,6 +31,7 @@ using (var scope = app.Services.CreateScope())
 
 
 // Configure the HTTP request pipeline.
+// Step 3: Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -41,6 +47,7 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+// Step 4: Configure Routes
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Tracker}/{action=Index}/{id?}")
