@@ -1,16 +1,17 @@
 using Backend.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Step 1: Configure SQL Server connection
-builder.Services.AddDbContext<ExpenseTrackerDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
+// Configure SQL Server connection
+// builder.Services.AddDbContext<ExpenseTrackerDbContext>(options =>
+//     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+// );
 
-// Step 2: Add services to the container
-builder.Services.AddControllersWithViews();
+// Configure In memory db
 builder.Services.AddDbContext<TrackerDBContext>(
     options => options.UseInMemoryDatabase("TrackerDB")
 );
@@ -18,6 +19,28 @@ builder.Services.AddDbContext<TrackerDBContext>(
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<TrackerDBContext>()
     .AddDefaultTokenProviders();
+
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/User/LogIn";  
+    options.AccessDeniedPath = "/Home/AccessDenied";
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+    options.SlidingExpiration = true;
+});
+
+//Add services to the container
+builder.Services.AddControllersWithViews();
+
+//Authentication Middleware
+// builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+//     .AddCookie(options =>
+//     {
+//         options.LoginPath = "/Account/LogIn";  // Redirect to login if unauthorized
+//         options.AccessDeniedPath = "/Home/AccessDenied";
+//         options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+//         options.SlidingExpiration = true;
+//     });
 
 
 var app = builder.Build();
@@ -50,7 +73,7 @@ app.MapStaticAssets();
 // Step 4: Configure Routes
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Tracker}/{action=Index}/{id?}")
+    pattern: "{controller=User}/{action=LogIn}")
     .WithStaticAssets();
 
 
