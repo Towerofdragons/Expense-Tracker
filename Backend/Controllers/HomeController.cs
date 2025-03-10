@@ -95,12 +95,12 @@ public class HomeController : Controller
             }
             Console.WriteLine("Model not set");
             foreach (var key in ModelState.Keys)
-        {
-            foreach (var error in ModelState[key].Errors)
             {
-                Console.WriteLine($"Field: {key} - Error: {error.ErrorMessage}");
+                foreach (var error in ModelState[key].Errors)
+                {
+                    Console.WriteLine($"Field: {key} - Error: {error.ErrorMessage}");
+                }
             }
-        }
             return RedirectToAction("Index", "Dashboard", income);
         }
 
@@ -171,20 +171,39 @@ public class HomeController : Controller
     public class ExpenseController : Controller
     {
         private readonly TrackerDBContext _context;
+        private readonly ILogger<IncomeController> _logger;
 
-        public ExpenseController(TrackerDBContext context)
+        public ExpenseController(TrackerDBContext context, ILogger<IncomeController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public IActionResult Add(Expense expense)
         {
-            if (expense != null)
+            expense.CategoryId = 1; // Categories set by default
+            expense.UserId = 1;
+
+            expense.User = null;
+            expense.Category = null;
+
+            if (ModelState.IsValid)
             {
+                expense.CreatedAt = DateTime.UtcNow;
                 _context.Expense.Add(expense);
                 _context.SaveChanges();
+                _logger.LogInformation("expense successfully added.");
+                return RedirectToAction("Index", "Dashboard");
             }
-            return RedirectToAction("Index", "Dashboard");
+            Console.WriteLine("Model not set");
+            foreach (var key in ModelState.Keys)
+            {
+                foreach (var error in ModelState[key].Errors)
+                {
+                    Console.WriteLine($"Field: {key} - Error: {error.ErrorMessage}");
+                }
+            }
+            return RedirectToAction("Index", "Dashboard", expense);
         }
 
         // Edit Expense - GET
