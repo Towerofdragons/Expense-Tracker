@@ -132,7 +132,7 @@ public class HomeController : Controller
                 income.Description = updatedIncome.Description;
                 income.IncomeDate = updatedIncome.IncomeDate;
                 _context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Dashboard", income);
             }
 
             return View(updatedIncome);
@@ -151,7 +151,7 @@ public class HomeController : Controller
 
         // Delete Income - POST
         [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed(int id)
+        public IActionResult Delete(int id)
         {
             var income = _context.Income.Find(id);
             if (income == null)
@@ -161,7 +161,7 @@ public class HomeController : Controller
 
             _context.Income.Remove(income);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Dashboard");
         }
     }
 
@@ -233,7 +233,7 @@ public class HomeController : Controller
                 expense.Description = updatedExpense.Description;
                 expense.ExpenseDate = updatedExpense.ExpenseDate;
                 _context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Dashboard", expense);
             }
 
             return View(updatedExpense);
@@ -252,7 +252,7 @@ public class HomeController : Controller
 
         // Delete Expense - POST
         [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed(int id)
+        public IActionResult Delete(int id)
         {
             var expense = _context.Expense.Find(id);
             if (expense == null)
@@ -262,7 +262,9 @@ public class HomeController : Controller
 
             _context.Expense.Remove(expense);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+
+            Console.WriteLine($"Deleted expense {id}");
+            return RedirectToAction("Index", "Dashboard");
         }
     }
 

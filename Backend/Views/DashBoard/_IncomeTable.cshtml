@@ -23,7 +23,7 @@
                 <td>
                     <div class="actions">
                         <div class="edit-icon">
-                            <i class="fa-solid fa-pen" title="Edit"></i>
+                                <i class="fa-solid fa-pen" title="Edit"></i>
                         </div>
 
                         <div class="del-icon">
@@ -94,12 +94,21 @@
                 <td>
                     <div class="actions">
                         <div class="edit-icon">
-                            <i class="fa-solid fa-pen" title="Edit"></i>        <!-- TODO Add dynamic links TODO edit-icon and Delete-->
+                            <a asp-controller="Income" asp-action="Edit" asp-route-id="@income.IncomeId" title="Edit">
+                                <i class="fa-solid fa-pen" title="Edit"></i>        <!-- TODO Add dynamic links TODO edit-icon and Delete-->
+                            </a>
 
                         </div>
 
                         <div class="del-icon">
-                            <i class="fa-solid fa-trash" title="Delete"></i>
+                            <form asp-controller="Expense" asp-action="Delete" asp-route-id="@income.IncomeId" method="post">
+                                <button style="border:none" type="submit" class="del-icon" title="Delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </form>
+                            <!--a asp-controller="Income" asp-action="Delete" asp-route-id="@income.IncomeId" title="Delete">
+                                <i class="fa-solid fa-trash" title="Delete"></i>
+                            </a-->
                         </div>
                     </div>
                 </td>
