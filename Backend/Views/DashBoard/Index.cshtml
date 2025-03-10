@@ -35,3 +35,124 @@
   </div>
   
 </div>
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="dashboard">
+    @* Info tabs section *@
+    <div class="info-tabs">
+        <div class="tab">
+            <div class="tab-content">
+                <h2 class="tab-heading">Total Income</h2>
+                <p class="tab-value">Sh @Model.TotalIncome</p> <!-- TODO What if there are no income records? -->
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="tab-content">
+                <h2 class="tab-heading">Total Expenses</h2>
+                <p class="tab-value">Sh @Model.TotalExpense</p>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="tab-content">
+                <h2 class="tab-heading">Balance</h2>
+                <p class="tab-value">Sh @(Model.TotalIncome - Model.TotalExpense)</p>
+            </div>
+        </div>
+    </div>
+
+    @* Charts Section  *@
+    <div class="charts">
+        <div class="chart-container">
+            <h3 class="chart-title">Expenses by Category</h3>
+            @* Pie chart goes here *@
+        </div>
+
+        <div class="chart-container">
+            <h3 class="chart-title">Monthly Overview</h3>
+            @* Bar chart goes here *@
+        </div>
+    </div>
+
+    @* Section selector buttons *@
+    <div class="selector-tab">
+        <button id="income-tab" class="section-button active">Income</button>
+        <button id="expense-tab" class="section-button">Expense</button>
+    </div>
+
+
+    @* Income form *@
+    <div class="form-container">
+        @Html.Partial("_IncomeForm") @* Load Income Table by Default*@
+        @Html.Partial("_ExpenseForm")@* Load Expense Form After Income*@
+    </div>
+
+    @* Income Table section *@
+    <div class="table-container">
+        @await Html.PartialAsync("_IncomeTable", Model) @* Load Income Table by Default*@
+        @await Html.PartialAsync("_ExpenseTable", Model)@* Load Expense Table after Income*@
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+        $(document).ready(function(){
+            $('#income-tab').click(function(){
+                $.get("@Url.Action("IncomeForm", "Home")", function (data) {
+                    $(".form-container").html(data);
+                });
+                $.get("@Url.Action("IncomeTable", "Home")", function (data) {
+                    $(".table-container").html(data);
+                });
+
+
+                $(this).addClass("active");
+                $("#expense-tab").removeClass("active");
+
+            });
+
+            $('#expense-tab').click(function(){
+                $.get("@Url.Action("ExpenseForm", "Home")", function (data) {
+                    $(".form-container").html(data);
+                });
+                $.get("@Url.Action("ExpenseTable", "Home")", function (data) {
+                    $(".table-container").html(data);
+                });
+
+                $(this).addClass("active");
+                $("#income-tab").removeClass("active");
+
+            });
+
+        }); */
+
+       $(document).ready(function(){
+
+            $("#income-form, #income-table").show();
+            $("#expense-form, #expense-table").hide();
+
+            $('#income-tab').click(function(){
+                $("#income-form, #income-table").show();
+                $("#expense-form, #expense-table").hide();
+                $(this).addClass("active");
+                $("#expense-tab").removeClass("active");
+            });
+
+            $('#expense-tab').click(function(){
+                $("#income-form, #income-table").hide();
+                $("#expense-form, #expense-table").show();
+                $(this).addClass("active");
+                $("#income-tab").removeClass("active");
+            });
+        });
+
+    </script>
+
+
+
+</div> @* End of dashboard *@

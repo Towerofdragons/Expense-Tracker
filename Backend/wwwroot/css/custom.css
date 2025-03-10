@@ -1,0 +1,310 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=K2D&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "K2D", sans-serif;
+    background-color: #fff;
+    height: 100%;
+}
+
+.dashboard {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    padding: 5px 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*Infotabs*/
+.info-tabs {
+    display: flex;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+    background-color: #f0f0f0;
+}
+
+.tab {
+    flex: 1;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #d9d9d9;
+}
+
+.tab-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-heading {
+    color: #270dba;
+    font-family: "K2D", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.tab-value {
+    font-family: "K2D", sans-serif;
+    font-size: 20px;
+    color: #000;
+}
+
+/* Charts*/
+.charts {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.chart-container {
+    flex: 1;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+}
+
+.chart-title {
+    font-family: "K2D", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+/* Selector Tabs */
+.selector-tab {
+    display: flex;
+    gap: 40px;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+    background-color: #f0f0f0;
+}
+
+.section-button {
+    flex: 1;
+    border-radius: 5px;
+    padding: 10px 20px;
+    height: 78px;
+    font-family: "K2D", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: none;
+    text-align: center;
+}
+
+.active {
+    background-color: #d9d9d9;
+}
+
+/*Income/ Expense Forms*/
+/*Form hiding sections*/
+.hidden {
+    display: none;
+}
+
+.form-container {
+    border-radius: 10px;
+    padding: 60px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+    background-color: #f0f0f0;
+}
+
+.form-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-family: "K2D", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+.form-input {
+    height: 60px;
+    border: 1px solid #7d7c7c;
+    border-radius: 5px;
+    padding: 0 15px;
+    font-family: "K2D", sans-serif;
+    font-size: 16px;
+    background-color: #f0f0f0;
+}
+
+.add-button {
+    width: 100%;
+    height: 78px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-family: "K2D", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #000;
+}
+/* Table Container */
+.table-container {
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+    margin-bottom: 30px;
+}
+
+.table-title {
+    color: #270dba;
+    font-family: "K2D", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.table {
+    width: 100%;
+    padding: 0 10px;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    font-weight: bold;
+    color: #333;
+}
+
+.actions {
+    display: flex;
+    gap: 18px;
+}
+
+.edit-icon, .del-icon {
+    cursor: pointer;
+    /*    margin: 0 8px;*/
+    font-size: 16px;
+    color: black;
+}
+
+    .edit-icon:hover {
+        color: #270dba;
+    }
+
+    .del-icon:hover {
+        color: #CA0808
+    }
+
+/*Sign up/ Login Page*/
+.signup-page, .login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.signup-container, .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 560px;
+    gap: 30px;
+}
+
+.signup-title, .login-title {
+    color: #270dba;
+    font-family: "K2D", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.signup-form, .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    width: 100%;
+}
+
+.form-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    .form-field .form-input {
+        width: 100%;
+    }
+
+.signup-button, .login-button {
+    width: 100%;
+    height: 61px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: "K2D", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.option-text {
+    color: #000;
+    font-family: "K2D", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.option-link {
+    color: #270dba;
+    text-decoration: none;
+}
+
+/*Responsiveness*/
+@media screen and (max-width: 700px) {
+    .info-tabs, .charts {
+        flex-direction: column;
+    }
+
+    .chart-container {
+        width: 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

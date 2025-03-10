@@ -1,0 +1,116 @@
+﻿@model Backend.Models.IncomeExpenses
+
+<div id="income-table">
+
+    <h2 class="table-title">INCOME</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Source</th>
+                <th>Amount</th>
+                <th>Notes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>  2024-01-31</td>
+                <td>Freelance</td>
+                <td>Sh 10,000</td>
+                <td>Web Development</td>
+                <td>
+                    <div class="actions">
+                        <div class="edit-icon">
+                            <i class="fa-solid fa-pen" title="Edit"></i>
+                        </div>
+
+                        <div class="del-icon">
+                            <i class="fa-solid fa-trash" title="Delete"></i>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>  2024-01-31</td>
+                <td>Salary</td>
+                <td>Sh 20,000</td>
+                <td>Monthly Salary</td>
+                <td>
+                    <div class="actions">
+                        <div class="edit-icon">
+                            <i class="fa-solid fa-pen" title="Edit"></i>
+                        </div>
+
+                        <div class="del-icon">
+                            <i class="fa-solid fa-trash" title="Delete"></i>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>  2024-02-15</td>
+                <td>Consulting</td>
+                <td>Sh 15,000</td>
+                <td>Technical Review</td>
+                <td>
+                    <div class="actions">
+                        <div class="edit-icon">
+                            <i class="fa-solid fa-pen" title="Edit"></i>
+                        </div>
+
+                        <div class="del-icon">
+                            <i class="fa-solid fa-trash" title="Delete"></i>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>  2024-02-28</td>
+                <td>Contract</td>
+                <td>Sh 25,000</td>
+                <td>Mobile App Development</td>
+                <td>
+                    <div class="actions">
+                        <div class="edit-icon">
+                            <i class="fa-solid fa-pen" title="Edit"></i>
+                        </div>
+
+                        <div class="del-icon">
+                            <i class="fa-solid fa-trash" title="Delete"></i>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+    @foreach (var income in Model.Income)
+    {
+            <tr>
+                <td>@income.IncomeDate</td>
+                <td>@income.Category </td>
+                <td>Sh @income.Amount</td>
+                <td>@income.Description</td>
+                <td>
+                    <div class="actions">
+                        <div class="edit-icon">
+                            <i class="fa-solid fa-pen" title="Edit"></i>        <!-- TODO Add dynamic links TODO edit-icon and Delete-->
+
+                        </div>
+
+                        <div class="del-icon">
+                            <i class="fa-solid fa-trash" title="Delete"></i>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+    }
+
+
+
+        </tbody>
+    </table>
+
+
+</div>
