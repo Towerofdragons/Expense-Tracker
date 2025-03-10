@@ -73,6 +73,21 @@ header {
     padding: 50px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     background-color: #f0f0f0;
+/*    height:auto;*/
+}
+
+#pie-container {
+/*    position: relative;*/
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+
+}
+#bar-container {
+    /*    position: relative;*/
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
 }
 
 .chart-title {
