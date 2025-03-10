@@ -89,16 +89,18 @@
     @* Income form *@
     <div class="form-container">
         @Html.Partial("_IncomeForm") @* Load Income Table by Default*@
-
+        @Html.Partial("_ExpenseForm")@* Load Expense Form After Income*@
     </div>
 
     @* Income Table section *@
     <div class="table-container">
-        @Html.Partial("_IncomeTable") @* Load Income Table by Default*@
+        @await Html.PartialAsync("_IncomeTable", Model) @* Load Income Table by Default*@
+        @await Html.PartialAsync("_ExpenseTable", Model)@* Load Expense Table after Income*@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
+        /*
         $(document).ready(function(){
             $('#income-tab').click(function(){
                 $.get("@Url.Action("IncomeForm", "Home")", function (data) {
@@ -107,6 +109,7 @@
                 $.get("@Url.Action("IncomeTable", "Home")", function (data) {
                     $(".table-container").html(data);
                 });
+
 
                 $(this).addClass("active");
                 $("#expense-tab").removeClass("active");
@@ -126,7 +129,28 @@
 
             });
 
+        }); */
+
+       $(document).ready(function(){
+
+            $("#income-form, #income-table").show();
+            $("#expense-form, #expense-table").hide();
+
+            $('#income-tab').click(function(){
+                $("#income-form, #income-table").show();
+                $("#expense-form, #expense-table").hide();
+                $(this).addClass("active");
+                $("#expense-tab").removeClass("active");
+            });
+
+            $('#expense-tab').click(function(){
+                $("#income-form, #income-table").hide();
+                $("#expense-form, #expense-table").show();
+                $(this).addClass("active");
+                $("#income-tab").removeClass("active");
+            });
         });
+
     </script>
 
 
