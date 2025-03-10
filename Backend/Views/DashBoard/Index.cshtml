@@ -70,14 +70,21 @@
 
     @* Charts Section  *@
     <div class="charts">
-        <div class="chart-container">
+        
+        <div class="chart-container" >
             <h3 class="chart-title">Expenses by Category</h3>
             @* Pie chart goes here *@
+            <div id="pie-container">
+
+            </div>
         </div>
 
         <div class="chart-container">
             <h3 class="chart-title">Monthly Overview</h3>
             @* Bar chart goes here *@
+            <div id="bar-container">
+
+            </div>
         </div>
     </div>
 
@@ -102,8 +109,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        /*
-        $(document).ready(function(){
+        
+        /*$(document).ready(function(){
             $('#income-tab').click(function(){
                 $.get("@Url.Action("IncomeForm", "Home")", function (data) {
                     $(".form-container").html(data);
@@ -111,7 +118,6 @@
                 $.get("@Url.Action("IncomeTable", "Home")", function (data) {
                     $(".table-container").html(data);
                 });
-
 
                 $(this).addClass("active");
                 $("#expense-tab").removeClass("active");
@@ -131,7 +137,7 @@
 
             });
 
-        }); */
+        });*/ 
 
        $(document).ready(function(){
 
@@ -155,6 +161,58 @@
 
     </script>
 
+    @* Handling charts *@
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <script>
+        window.onload = function () {
+            // Pie Chart Data
+            var pieChart = new CanvasJS.Chart("pie-container", {
+                animationEnabled: true,
+                theme: "light2",
+                // title: {
+                //     text: "Expenses By Category"
+                // },
+                data: [{
+                    type: "pie",
+                    indexLabel: "{label}: {y}%",
+                    indexLabelFontSize: 16,
+                    dataPoints: [
+                        { label: "Rent", y: 20},
+                        { label: "Groceries", y: 30},
+                        { label: "School Fees", y: 25 },
+                        { label: "Energy", y: 25}
+                    ]
+                }]
+            });
+
+            // Bar Chart Data
+            var barChart = new CanvasJS.Chart("bar-container", {
+                animationEnabled: true,
+                theme: "light2",
+                axisY: {
+                    title: "Amount",
+                    gridThickness: 1,
+                    labelFontSize: 14
+                },
+                data: [{
+                    type: "column",
+                    indexLabel: "{y}",
+                    indexLabelFontSize: 16,
+                    color: "#8A7DFF",
+                    dataPoints: [
+                        { label: "Income", y: @Model.TotalIncome },
+                        { label: "Expense", y: @Model.TotalExpense},
+                        { label: "Balance", y: @(Model.TotalIncome - Model.TotalExpense)}
+                    ]
+                }]
+            });
+
+            // Render Both Charts
+            pieChart.render();
+            barChart.render();
+        };
+    </script>
 
 
 </div> @* End of dashboard *@
