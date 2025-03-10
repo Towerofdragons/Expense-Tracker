@@ -24,7 +24,7 @@ namespace Backend.Controllers
     }
 
     [Authorize(Roles = "Admin")]
-    public IActionResult Index()
+    public IActionResult ViewUserIndex()
     {
         var users = _context.Users.ToList();
         return View(users);
