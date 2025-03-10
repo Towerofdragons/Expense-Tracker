@@ -26,7 +26,7 @@ namespace Backend.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         // Navigation properties
-        public User User { get; set; }
-        public Category Category { get; set; }
+        public User? User { get; set; }
+        public Category? Category { get; set; }
     }
 }

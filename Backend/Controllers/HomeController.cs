@@ -67,20 +67,41 @@ public class HomeController : Controller
     public class IncomeController : Controller
     {
         private readonly TrackerDBContext _context;
+        private readonly ILogger<IncomeController> _logger;
 
-        public IncomeController(TrackerDBContext context)
+        public IncomeController(TrackerDBContext context, ILogger<IncomeController> logger)
         {
             _context = context;
+            _logger = logger;
+
         }
 
+        [HttpPost]
         public IActionResult Add(Income income)
         {
-            if (income != null)
+            income.CategoryId = 1; // Categories set by default
+            income.UserId = 1;
+
+            income.User = null;
+            income.Category = null;
+
+            if (ModelState.IsValid)
             {
+                income.CreatedAt = DateTime.UtcNow;
                 _context.Income.Add(income);
                 _context.SaveChanges();
+                _logger.LogInformation("Income successfully added.");
+                return RedirectToAction("Index", "Dashboard");
             }
-            return RedirectToAction("Index");
+            Console.WriteLine("Model not set");
+            foreach (var key in ModelState.Keys)
+        {
+            foreach (var error in ModelState[key].Errors)
+            {
+                Console.WriteLine($"Field: {key} - Error: {error.ErrorMessage}");
+            }
+        }
+            return RedirectToAction("Index", "Dashboard", income);
         }
 
     
@@ -163,7 +184,7 @@ public class HomeController : Controller
                 _context.Expense.Add(expense);
                 _context.SaveChanges();
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Dashboard");
         }
 
         // Edit Expense - GET
