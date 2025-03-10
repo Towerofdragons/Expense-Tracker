@@ -11,6 +11,8 @@ namespace Backend.Models
         [Key]
         public int UserId { get; set; }
 
+        public bool IsActive { get; set; }
+
         [Required, MaxLength(100)]
         public string Name { get; set; }
 
