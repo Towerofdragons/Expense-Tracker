@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4by86fFkUgaSsYmM2NVgoIRB6vlFt74zPuf9BoJVvAc=",
+  "Hash": "6UmnekjStMBKYkmSEZz1+Xz38f3jLp+vqP+sos4EI0Q=",
   "Source": "Backend",
   "BasePath": "_content/Backend",
   "Mode": "Default",
@@ -836,12 +836,12 @@
       "OriginalItemSpec": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\kcxnrbeimi-5yfoqqi4ls.gz",
+      "Identity": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\kcxnrbeimi-ff40nt85is.gz",
       "SourceId": "Backend",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Backend",
-      "RelativePath": "css/custom#[.{fingerprint=5yfoqqi4ls}]?.css.gz",
+      "RelativePath": "css/custom#[.{fingerprint=ff40nt85is}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -850,8 +850,8 @@
       "RelatedAsset": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\css\\custom.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "qb2y7agp65",
-      "Integrity": "Rk+F14ZpSDAEvzoCAyxX+TAt+X6Y8eR56gjcc/qde2c=",
+      "Fingerprint": "zspstpx255",
+      "Integrity": "Xb1T8dGsS8TxYkni6pBMHAJdPhFSLVF4Cb6pE9AE8Ak=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\css\\custom.css"
@@ -1151,6 +1151,27 @@
       "OriginalItemSpec": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
+      "Identity": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\taivfxw7f4-3wn1inij3e.gz",
+      "SourceId": "Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Backend",
+      "RelativePath": "js/custom#[.{fingerprint=3wn1inij3e}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\js\\custom.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "22ztxynlo6",
+      "Integrity": "uo+i6cE5RhxACQkus7stfo1MzyxwgTMLhhthBQKW0EU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\js\\custom.js"
+    },
+    {
       "Identity": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\uga6i2pbno-lcd1t2u6c8.gz",
       "SourceId": "Backend",
       "SourceType": "Discovered",
@@ -1438,8 +1459,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5yfoqqi4ls",
-      "Integrity": "vYhNMY0GEz8evrevEpCB8aDTJMTDWhRefZ2WEpVt7qI=",
+      "Fingerprint": "ff40nt85is",
+      "Integrity": "a+ET3mJV7qRdEWTJsHXeWjKC54mu+crnOA8zXHvw74s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\custom.css"
@@ -1485,6 +1506,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\js\\custom.js",
+      "SourceId": "Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\",
+      "BasePath": "_content/Backend",
+      "RelativePath": "js/custom#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3wn1inij3e",
+      "Integrity": "Mx38NVCGCCJwLmag/4jZZU8RWR+T06BGiCV/tmh7K80=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\custom.js"
     },
     {
       "Identity": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\js\\site.js",
@@ -3366,13 +3408,13 @@
       ]
     },
     {
-      "Route": "css/custom.5yfoqqi4ls.css",
-      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\kcxnrbeimi-5yfoqqi4ls.gz",
+      "Route": "css/custom.css",
+      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\kcxnrbeimi-ff40nt85is.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000813008130"
+          "Quality": "0.000641848524"
         }
       ],
       "ResponseHeaders": [
@@ -3382,19 +3424,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1229"
+          "Value": "1557"
         },
         {
           "Name": "ETag",
-          "Value": "\"Rk+F14ZpSDAEvzoCAyxX+TAt+X6Y8eR56gjcc/qde2c=\""
+          "Value": "\"Xb1T8dGsS8TxYkni6pBMHAJdPhFSLVF4Cb6pE9AE8Ak=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:38:30 GMT"
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -3410,26 +3452,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"vYhNMY0GEz8evrevEpCB8aDTJMTDWhRefZ2WEpVt7qI=\""
+          "Value": "W/\"a+ET3mJV7qRdEWTJsHXeWjKC54mu+crnOA8zXHvw74s=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "5yfoqqi4ls"
-        },
-        {
-          "Name": "label",
-          "Value": "css/custom.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-vYhNMY0GEz8evrevEpCB8aDTJMTDWhRefZ2WEpVt7qI="
+          "Value": "sha256-a+ET3mJV7qRdEWTJsHXeWjKC54mu+crnOA8zXHvw74s="
         }
       ]
     },
     {
-      "Route": "css/custom.5yfoqqi4ls.css",
+      "Route": "css/custom.css",
       "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\css\\custom.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3439,7 +3473,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5723"
+          "Value": "7578"
         },
         {
           "Name": "Content-Type",
@@ -3447,11 +3481,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vYhNMY0GEz8evrevEpCB8aDTJMTDWhRefZ2WEpVt7qI=\""
+          "Value": "\"a+ET3mJV7qRdEWTJsHXeWjKC54mu+crnOA8zXHvw74s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:38:30 GMT"
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-a+ET3mJV7qRdEWTJsHXeWjKC54mu+crnOA8zXHvw74s="
+        }
+      ]
+    },
+    {
+      "Route": "css/custom.css.gz",
+      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\kcxnrbeimi-ff40nt85is.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1557"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xb1T8dGsS8TxYkni6pBMHAJdPhFSLVF4Cb6pE9AE8Ak=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xb1T8dGsS8TxYkni6pBMHAJdPhFSLVF4Cb6pE9AE8Ak="
+        }
+      ]
+    },
+    {
+      "Route": "css/custom.ff40nt85is.css",
+      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\kcxnrbeimi-ff40nt85is.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000641848524"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1557"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xb1T8dGsS8TxYkni6pBMHAJdPhFSLVF4Cb6pE9AE8Ak=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"a+ET3mJV7qRdEWTJsHXeWjKC54mu+crnOA8zXHvw74s=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ff40nt85is"
+        },
+        {
+          "Name": "label",
+          "Value": "css/custom.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-a+ET3mJV7qRdEWTJsHXeWjKC54mu+crnOA8zXHvw74s="
+        }
+      ]
+    },
+    {
+      "Route": "css/custom.ff40nt85is.css",
+      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\css\\custom.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7578"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"a+ET3mJV7qRdEWTJsHXeWjKC54mu+crnOA8zXHvw74s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3461,7 +3640,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5yfoqqi4ls"
+          "Value": "ff40nt85is"
         },
         {
           "Name": "label",
@@ -3469,13 +3648,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-vYhNMY0GEz8evrevEpCB8aDTJMTDWhRefZ2WEpVt7qI="
+          "Value": "sha256-a+ET3mJV7qRdEWTJsHXeWjKC54mu+crnOA8zXHvw74s="
         }
       ]
     },
     {
-      "Route": "css/custom.5yfoqqi4ls.css.gz",
-      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\kcxnrbeimi-5yfoqqi4ls.gz",
+      "Route": "css/custom.ff40nt85is.css.gz",
+      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\kcxnrbeimi-ff40nt85is.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3484,7 +3663,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1229"
+          "Value": "1557"
         },
         {
           "Name": "Content-Type",
@@ -3492,11 +3671,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Rk+F14ZpSDAEvzoCAyxX+TAt+X6Y8eR56gjcc/qde2c=\""
+          "Value": "\"Xb1T8dGsS8TxYkni6pBMHAJdPhFSLVF4Cb6pE9AE8Ak=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:38:30 GMT"
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3514,7 +3693,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5yfoqqi4ls"
+          "Value": "ff40nt85is"
         },
         {
           "Name": "label",
@@ -3522,144 +3701,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Rk+F14ZpSDAEvzoCAyxX+TAt+X6Y8eR56gjcc/qde2c="
-        }
-      ]
-    },
-    {
-      "Route": "css/custom.css",
-      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\kcxnrbeimi-5yfoqqi4ls.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000813008130"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1229"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Rk+F14ZpSDAEvzoCAyxX+TAt+X6Y8eR56gjcc/qde2c=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:38:30 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"vYhNMY0GEz8evrevEpCB8aDTJMTDWhRefZ2WEpVt7qI=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-vYhNMY0GEz8evrevEpCB8aDTJMTDWhRefZ2WEpVt7qI="
-        }
-      ]
-    },
-    {
-      "Route": "css/custom.css",
-      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\css\\custom.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5723"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"vYhNMY0GEz8evrevEpCB8aDTJMTDWhRefZ2WEpVt7qI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:38:30 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-vYhNMY0GEz8evrevEpCB8aDTJMTDWhRefZ2WEpVt7qI="
-        }
-      ]
-    },
-    {
-      "Route": "css/custom.css.gz",
-      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\kcxnrbeimi-5yfoqqi4ls.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1229"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Rk+F14ZpSDAEvzoCAyxX+TAt+X6Y8eR56gjcc/qde2c=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:38:30 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Rk+F14ZpSDAEvzoCAyxX+TAt+X6Y8eR56gjcc/qde2c="
+          "Value": "sha256-Xb1T8dGsS8TxYkni6pBMHAJdPhFSLVF4Cb6pE9AE8Ak="
         }
       ]
     },
@@ -4256,6 +4298,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0="
+        }
+      ]
+    },
+    {
+      "Route": "js/custom.3wn1inij3e.js",
+      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\taivfxw7f4-3wn1inij3e.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001002004008"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "997"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uo+i6cE5RhxACQkus7stfo1MzyxwgTMLhhthBQKW0EU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Mx38NVCGCCJwLmag/4jZZU8RWR+T06BGiCV/tmh7K80=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3wn1inij3e"
+        },
+        {
+          "Name": "label",
+          "Value": "js/custom.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Mx38NVCGCCJwLmag/4jZZU8RWR+T06BGiCV/tmh7K80="
+        }
+      ]
+    },
+    {
+      "Route": "js/custom.3wn1inij3e.js",
+      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\js\\custom.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3620"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Mx38NVCGCCJwLmag/4jZZU8RWR+T06BGiCV/tmh7K80=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3wn1inij3e"
+        },
+        {
+          "Name": "label",
+          "Value": "js/custom.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Mx38NVCGCCJwLmag/4jZZU8RWR+T06BGiCV/tmh7K80="
+        }
+      ]
+    },
+    {
+      "Route": "js/custom.3wn1inij3e.js.gz",
+      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\taivfxw7f4-3wn1inij3e.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uo+i6cE5RhxACQkus7stfo1MzyxwgTMLhhthBQKW0EU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3wn1inij3e"
+        },
+        {
+          "Name": "label",
+          "Value": "js/custom.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uo+i6cE5RhxACQkus7stfo1MzyxwgTMLhhthBQKW0EU="
+        }
+      ]
+    },
+    {
+      "Route": "js/custom.js",
+      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\taivfxw7f4-3wn1inij3e.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001002004008"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "997"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uo+i6cE5RhxACQkus7stfo1MzyxwgTMLhhthBQKW0EU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Mx38NVCGCCJwLmag/4jZZU8RWR+T06BGiCV/tmh7K80=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Mx38NVCGCCJwLmag/4jZZU8RWR+T06BGiCV/tmh7K80="
+        }
+      ]
+    },
+    {
+      "Route": "js/custom.js",
+      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\wwwroot\\js\\custom.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3620"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Mx38NVCGCCJwLmag/4jZZU8RWR+T06BGiCV/tmh7K80=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Mx38NVCGCCJwLmag/4jZZU8RWR+T06BGiCV/tmh7K80="
+        }
+      ]
+    },
+    {
+      "Route": "js/custom.js.gz",
+      "AssetFile": "C:\\Users\\Z.BOOK\\OneDrive\\Documents\\CMT307 .Net Programming\\Expense-Tracker\\Backend\\obj\\Debug\\net9.0\\compressed\\taivfxw7f4-3wn1inij3e.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uo+i6cE5RhxACQkus7stfo1MzyxwgTMLhhthBQKW0EU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Mar 2025 19:56:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uo+i6cE5RhxACQkus7stfo1MzyxwgTMLhhthBQKW0EU="
         }
       ]
     },
