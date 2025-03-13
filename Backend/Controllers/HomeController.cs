@@ -223,7 +223,7 @@ public class HomeController : Controller
             Expense newExpense = new Expense
             {
                 Id = userID,  // Assign the correct user ID
-                CategoryId = 1,
+                CategoryId = expense.CategoryId,
                 Amount = expense.Amount,
                 Description = expense.Description,
                 ExpenseDate = expense.ExpenseDate,

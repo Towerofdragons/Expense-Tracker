@@ -85,6 +85,8 @@
                 </td>
             </tr> -->
 
+@if (Model.Income != null && Model.Income.Any())
+{
     @foreach (var income in Model.Income)
     {
             <tr>
@@ -120,8 +122,12 @@
             </tr>
 
     }
-
-
+}
+else
+{   <tr>
+    <p>You do not have any recorded incomes.</p>
+    </tr>
+}
 
         </tbody>
     </table>

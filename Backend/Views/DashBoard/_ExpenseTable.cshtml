@@ -50,6 +50,8 @@
                 </td>
             </tr>   -->
 
+@if (Model.Expense != null && Model.Expense.Any())
+{
      @foreach (var expense in Model.Expense)
       {
             <tr>
@@ -86,7 +88,12 @@
             </tr>
 
         }
-
+}
+else{
+    <tr>
+        <p>You do not have any recorded expenses.</p>
+    </tr>
+}
         
         </tbody>
     </table>

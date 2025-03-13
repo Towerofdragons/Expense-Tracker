@@ -5,6 +5,8 @@ using Backend.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Controllers;
 
@@ -73,9 +75,9 @@ public class DashboardController : Controller
     public async Task<IActionResult> ExpenseTable()
     {
         var model = await GetModel();
+        var categories = await _context.Categories.ToListAsync();
+        ViewData["Categories"] = categories ?? new List<Category>();
         return PartialView("_ExpenseTable", model);
     }
 
-
-    
 }

@@ -19,9 +19,9 @@ namespace Backend.Models
         public string Type { get; set; } // Expense or Income type
 
         // Navigation properties
-        public User User { get; set; }
-        public ICollection<Expense> Expenses { get; set; }
-        public ICollection<Income> Incomes { get; set; }
-        public ICollection<Budget> Budgets { get; set; }
+        public User? User { get; set; }
+        public ICollection<Expense>? Expenses { get; set; }
+        public ICollection<Income>? Incomes { get; set; }
+        public ICollection<Budget>? Budgets { get; set; }
     }
 }

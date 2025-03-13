@@ -85,8 +85,14 @@ public class TrackerDBContext : IdentityDbContext<User>
     modelBuilder.Entity<Category>().HasData(
         new { CategoryId = 1, Id = "1002", Name = "Salary", Type = "Income" },
         new { CategoryId = 2, Id = "1002", Name = "Groceries", Type = "Expense" },
-        new { CategoryId = 3, Id = "2", Name = "Freelance", Type = "Income" },
-        new { CategoryId = 4, Id = "2", Name = "Entertainment", Type = "Expense" }
+        new { CategoryId = 3, Id = "1002", Name = "Freelance", Type = "Income" },
+        new { CategoryId = 4, Id = "1002", Name = "Entertainment", Type = "Expense" },
+        new { CategoryId = 5, Id = "1002", Name = "Bills", Type = "Expense" },
+        new { CategoryId = 6, Id = "1002", Name = "Rent", Type = "Expense" },
+        new { CategoryId = 7, Id = "1002", Name = "Self Care", Type = "Expense" },
+        new { CategoryId = 8, Id = "1002", Name = "Emergency Fund", Type = "Expense" },
+        new { CategoryId = 9, Id = "1002", Name = "Savings", Type = "Expense" },
+        new { CategoryId = 10, Id = "1002", Name = "Investments", Type = "Expense" }
     );
 
     modelBuilder.Entity<Income>().HasData(
