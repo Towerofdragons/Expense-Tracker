@@ -20,21 +20,49 @@ $(document).ready(function(){
 });
 
 //Handling overlay and pop up modal forms 
-$(document).on("click", ".edit-button", function (e) {
+$(document).on("click", ".edit-expense-button", function (e) {
     e.preventDefault();
-    // Show overlay and modal
-    $(".overlay").fadeIn();
-    $(".editModal").fadeIn();
+    // Fetch the Edit Expense Form Partial View
+    $.ajax({
+        url: "/Dashboard/EditExpenseForm",
+        type: "GET",
+        success: function (data) {//request is successful, this function executes.
+            $("#editExpenseContainer").html(data);//adds the modal and overlay in the container
+            // Show overlay and modal
+            $(".overlay").fadeIn();
+            $(".edit-modal").fadeIn();
+        },
+        error: function () {
+            alert("Failed to load edit form.");
+        }
+    });
+    
 });
-//$(document).ready(function () {
-//    $(".edit-button").on("click", function (e) {
-//        console.log("clicked");
-//        e.preventDefault();
-//        // Show overlay and modal
-//        $(".overlay").fadeIn();
-//        $(".editModal").fadeIn();
-//    });
-//});
+
+$(document).on("click", ".edit-income-button", function (e) {
+    e.preventDefault();
+    // Fetch the Edit Expense Form Partial View
+    $.ajax({
+        url: "/Dashboard/EditIncomeForm",
+        type: "GET",
+        success: function (data) {//request is successful, this function executes.
+            $("#editIncomeContainer").html(data);//adds the modal and overlay in the container
+            // Show overlay and modal
+            $(".overlay").fadeIn();
+            $(".edit-modal").fadeIn();
+        },
+        error: function () {
+            alert("Failed to load edit form.");
+        }
+    });
+
+});
+
+$(document).on("click", ".cancel-button, .overlay ", function () {
+    $(".overlay").fadeOut();
+    $(".edit-modal").fadeOut();
+});
+
 
 
 //Handling charts 

@@ -94,9 +94,9 @@
                 <td>@income.Description</td>
                 <td>
                     <div class="actions">
-                        <button style="border:none">
+                            <button style="border:none" class="edit-income-button">
                         <div class="edit-icon">
-                            <a asp-controller="Income" asp-action="Edit" asp-route-id="@income.IncomeId" title="Edit">
+                            <a asp-controller="Income" asp-action="Edit" asp-route-id="@income.IncomeId" title="Edit" style="color:black">
                                 <i class="fa-solid fa-pen" title="Edit"></i>        <!-- TODO Add dynamic links TODO edit-icon and Delete-->
                             </a>
 

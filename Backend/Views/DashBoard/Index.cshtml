@@ -107,6 +107,10 @@
         @await Html.PartialAsync("_IncomeTable") @* Load Income Table by Default*@
         @await Html.PartialAsync("_ExpenseTable")@* Load Expense Table after Income*@
     </div>
+
+    <!-- This is where the modal will be loaded -->
+    <div id="editExpenseContainer"></div>
+    <div id="editIncomeContainer"></div>
 @*
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>

@@ -13,7 +13,9 @@
         <h1>Expense Tracker</h1>
         @if (ViewBag.HideLogout == null || ViewBag.HideLogout == false)
         {
-            <button class="logout">Log Out</button>
+            <form asp-controller="User" asp-action="Logout" method="post" style="display: inline;">
+                <button class="logout" type="submit">Log Out</button>
+            </form>
         }
         
     </header>
