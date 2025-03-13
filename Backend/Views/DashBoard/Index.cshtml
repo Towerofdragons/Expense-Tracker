@@ -106,7 +106,7 @@
         @await Html.PartialAsync("_IncomeTable", Model) @* Load Income Table by Default*@
         @await Html.PartialAsync("_ExpenseTable", Model)@* Load Expense Table after Income*@
     </div>
-
+@*
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         
@@ -161,7 +161,7 @@
 
     </script>
 
-    @* Handling charts *@
+    @* Handling charts 
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
     <script>
@@ -214,5 +214,29 @@
         };
     </script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    @* Handling overlay and pop up modal forms 
+    <script>
+        $(document).ready(function(){
+            $(".edit-icon").on("click", function(e){
+                e.preventDefault();
+                 // Show overlay and modal
+                $("#overlay").show();
+                $("#editModal").show();
+            });
+        });
+    </script>
+    *@
+
+    @* jQuery *@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    @* CanvasJS *@
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+    @* To help the custom.js have access to the models *@
+    <input type="hidden" id="totalIncome" value="@Model.TotalIncome" />
+    <input type="hidden" id="totalExpense" value="@Model.TotalExpense" />
 
 </div> @* End of dashboard *@
