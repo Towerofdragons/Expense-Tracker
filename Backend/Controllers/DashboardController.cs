@@ -76,6 +76,16 @@ public class DashboardController : Controller
         return PartialView("_ExpenseTable", model);
     }
 
+    public IActionResult EditExpenseForm()
+    {
+        return PartialView("_EditExpenseForm");
+    }
 
-    
+    public IActionResult EditIncomeForm()
+    {
+        return PartialView("_EditIncomeForm");
+    }
+
+
+
 }

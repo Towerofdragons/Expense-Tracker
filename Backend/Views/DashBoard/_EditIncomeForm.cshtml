@@ -1,0 +1,32 @@
+@* <form class="income-form" id="income-form" asp-controller="Income" asp-action="Add" method="post"> *@
+<div class="overlay"></div>
+
+<div class="edit-modal">
+<form class="edit-income-form" id="edit-income-form">
+    <h2 class="table-title">EDIT INCOME</h2>
+    <div class="myform-row">
+        <div class="myform-group">
+            <label for="date">Date</label>
+            <input type="date" id="income-date" class="form-input" name="IncomeDate" />
+        </div>
+        <div class="myform-group">
+            <label for="amount">Amount</label>
+            <input type="text" id="income-amount" name="Amount" class="form-input" />
+        </div>
+    </div>
+    <div class="myform-row">
+        <div class="myform-group">
+            <label for="source">Source</label>
+            <input type="text" id="income-source" name="Source" class="form-input" />
+        </div>
+        <div class="myform-group">
+            <label for="notes">Notes</label>
+            <input type="text" id="income-notes" name="Description" class="form-input" />
+        </div>
+    </div>
+    <button type="submit" class="add-button">Edit Income</button>
+    <button type="submit" class="cancel-button">Cancel</button>
+</form>
+</div>
+
+

@@ -59,12 +59,12 @@
                 <td>@expense.Description</td>
                 <td>
                     <div class="actions">
-                        <div class="edit-icon">
-                            <a asp-controller="Expense" asp-action="Edit" asp-route-id="@expense.ExpenseId" title="Edit">
+                            <button style="border:none" class="edit-expense-button">
+                            <div class="edit-icon">
                                 <i class="fa-solid fa-pen" title="Edit"></i>        <!-- TODO Add dynamic links TODO edit-icon and Delete-->
-                            </a>
 
-                        </div>
+                            </div>
+                        </button>
 
                         <div class="del-icon">
                             <!--a asp-controller="Expense" asp-action="Delete" asp-route-id="@expense.ExpenseId" title="Delete">
