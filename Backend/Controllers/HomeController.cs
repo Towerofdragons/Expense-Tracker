@@ -1,8 +1,10 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Backend.Models;
-
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace Backend.Controllers;
 
@@ -76,6 +78,7 @@ public class HomeController : Controller
     public class IncomeController : Controller
     {
         private readonly TrackerDBContext _context;
+        private readonly UserManager<User> _userManager;
         private readonly ILogger<IncomeController> _logger;
 
         public IncomeController(TrackerDBContext context, ILogger<IncomeController> logger)
@@ -88,29 +91,51 @@ public class HomeController : Controller
         [HttpPost]
         public IActionResult Add(Income income)
         {
-            income.CategoryId = 1; // Categories set by default
-            income.UserId = 1;
+            income.CategoryId = 1; // TODO Categories set by default TODO
 
-            income.User = null;
+            //var userId = _userManager.GetUserId(User);
+            
+            //var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            //Console.WriteLine(ClaimTypes.Name);
+            var userID = User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value;
+
+            if (string.IsNullOrEmpty(userID))
+            {
+                _logger.LogWarning("User ID is null. Ensure the user is logged in.");
+                return RedirectToAction("Login", "Account");
+            }
+
+
+            income.Id = userID;
+
+            Console.WriteLine(userID);
             income.Category = null;
 
-            if (ModelState.IsValid)
+            Income newIncome = new Income
             {
-                income.CreatedAt = DateTime.UtcNow;
-                _context.Income.Add(income);
+                Id = userID,  // Assign the correct user ID
+                CategoryId = 1,
+                Amount = income.Amount,
+                Description = income.Description,
+                IncomeDate = income.IncomeDate,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            
+                _context.Income.Add(newIncome);
                 _context.SaveChanges();
                 _logger.LogInformation("Income successfully added.");
                 return RedirectToAction("Index", "Dashboard");
-            }
+            
             Console.WriteLine("Model not set");
-            foreach (var key in ModelState.Keys)
+            foreach (var key in ModelState.Keys)  // TODO
             {
                 foreach (var error in ModelState[key].Errors)
                 {
                     Console.WriteLine($"Field: {key} - Error: {error.ErrorMessage}");
                 }
             }
-            return RedirectToAction("Index", "Dashboard", income);
+            return RedirectToAction("Index", "Dashboard");
         }
 
     
@@ -141,7 +166,7 @@ public class HomeController : Controller
                 income.Description = updatedIncome.Description;
                 income.IncomeDate = updatedIncome.IncomeDate;
                 _context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Dashboard", income);
             }
 
             return View(updatedIncome);
@@ -160,7 +185,7 @@ public class HomeController : Controller
 
         // Delete Income - POST
         [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed(int id)
+        public IActionResult Delete(int id)
         {
             var income = _context.Income.Find(id);
             if (income == null)
@@ -170,7 +195,7 @@ public class HomeController : Controller
 
             _context.Income.Remove(income);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Dashboard");
         }
     }
 
@@ -190,21 +215,37 @@ public class HomeController : Controller
 
         public IActionResult Add(Expense expense)
         {
-            expense.CategoryId = 1; // Categories set by default
-            expense.UserId = 1;
+            var userID = User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value;
 
-            expense.User = null;
+            if (string.IsNullOrEmpty(userID))
+            {
+                _logger.LogWarning("User ID is null. Ensure the user is logged in.");
+                return RedirectToAction("Login", "Account");
+            }
+
+
+            expense.Id = userID;
+
+            Console.WriteLine(userID);
             expense.Category = null;
 
-            if (ModelState.IsValid)
+            Expense newExpense = new Expense
             {
-                expense.CreatedAt = DateTime.UtcNow;
-                _context.Expense.Add(expense);
+                Id = userID,  // Assign the correct user ID
+                CategoryId = 1,
+                Amount = expense.Amount,
+                Description = expense.Description,
+                ExpenseDate = expense.ExpenseDate,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            
+                _context.Expense.Add(newExpense);
                 _context.SaveChanges();
-                _logger.LogInformation("expense successfully added.");
+                _logger.LogInformation("Income successfully added.");
                 return RedirectToAction("Index", "Dashboard");
-            }
-            Console.WriteLine("Model not set");
+
+            Console.WriteLine("Model not set"); // TODO
             foreach (var key in ModelState.Keys)
             {
                 foreach (var error in ModelState[key].Errors)
@@ -212,7 +253,7 @@ public class HomeController : Controller
                     Console.WriteLine($"Field: {key} - Error: {error.ErrorMessage}");
                 }
             }
-            return RedirectToAction("Index", "Dashboard", expense);
+            return RedirectToAction("Index", "Dashboard");
         }
 
         // Edit Expense - GET
@@ -228,7 +269,7 @@ public class HomeController : Controller
 
         // Edit Expense - POST
         [HttpPost]
-        public IActionResult Edit(int id, Expense updatedExpense)
+        public IActionResult Edit(string id, Expense updatedExpense)
         {
             var expense = _context.Expense.Find(id);
             if (expense == null)
@@ -238,11 +279,12 @@ public class HomeController : Controller
 
             if (ModelState.IsValid)
             {
+                expense.Id = id;
                 expense.Amount = updatedExpense.Amount;
                 expense.Description = updatedExpense.Description;
                 expense.ExpenseDate = updatedExpense.ExpenseDate;
                 _context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Dashboard", expense);
             }
 
             return View(updatedExpense);
@@ -261,7 +303,7 @@ public class HomeController : Controller
 
         // Delete Expense - POST
         [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed(int id)
+        public IActionResult Delete(int id)
         {
             var expense = _context.Expense.Find(id);
             if (expense == null)
@@ -271,7 +313,9 @@ public class HomeController : Controller
 
             _context.Expense.Remove(expense);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+
+            Console.WriteLine($"Deleted expense {id}");
+            return RedirectToAction("Index", "Dashboard");
         }
     }
 

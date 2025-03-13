@@ -30,7 +30,7 @@ namespace Backend.Models
             modelBuilder.Entity<Budget>()
                 .HasOne(b => b.User)  // Budget has one User
                 .WithMany(u => u.Budgets) // User has many Budgets
-                .HasForeignKey(b => b.UserId)
+                .HasForeignKey(b => b.Id)
                 .OnDelete(DeleteBehavior.NoAction); // Prevents cascade delete
 
         }

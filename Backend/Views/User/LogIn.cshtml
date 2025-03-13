@@ -1,4 +1,4 @@
-@model Backend.Models.User
+@model Backend.Models.UserLoginViewModel
 
 <!--
 <h2>Login</h2>
@@ -20,14 +20,22 @@
     <p style="color: red;">@ViewData["ErrorMessage"]</p>
 }
 -->
+
+
 @{
     ViewData["Title"] = "Login";
 }
+
+
 
 <div class="login-page">
     <div class="login-container">
         <h2 class="login-title">Login</h2>
         <form class="login-form" method="post" asp-action="Login">
+            @if (ViewData["ErrorMessage"] != null)
+            {
+                <p style="color: red;">@ViewData["ErrorMessage"]</p>
+            }
             <div class="form-field">
                 <label for="email">Email</label>
                 <input asp-for="Email" required type="email" id="email" class="form-input" placeholder="Enter your email" />
@@ -46,7 +54,3 @@
     </div>
 
 </div>
- @if (ViewData["ErrorMessage"] != null)
-    {
-        <p style="color: red;">@ViewData["ErrorMessage"]</p>
-    }

@@ -1,6 +1,6 @@
-@model Backend.Models.User
+@model Backend.Models.UserRegisterViewModel
 
-<!--
+<!--    Registration V1
 <form method="post">
     <label>Name:</label>
     <input type="text" asp-for="Name" required />
@@ -19,6 +19,8 @@
 
 -->
 
+@* 
+    Registration V2
 @{
     ViewData["Title"] = "Sign Up";
 }
@@ -48,4 +50,51 @@
             <p class="option-text"><span>Already have an account?</span> <a asp-action="LogIn" class="option-link">Login</a></p>
         </div>
     </div>
+</div> *@
+
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<div class="signup-page">
+    <div class="signup-container">
+        <h2 class="signup-title">Sign Up</h2>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+
+        <form class="signup-form" asp-action="Register" method="post">
+            <div class="form-field">
+                <label for="fullname">Full Names</label>
+                <input asp-for="Name" required type="text" id="fullname" class="form-input" placeholder="Enter your full names" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-field">
+                <label for="email">Email</label>
+                <input asp-for="Email" required type="email" id="email" class="form-input" placeholder="Enter your email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-field">
+                <label for="password">Password</label>
+                <input asp-for="Password" required type="password" id="password" class="form-input" placeholder="Enter your password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="signup-button">Sign up</button>
+        </form>
+
+        <div class="other-option">
+            <p class="option-text"><span>Already have an account?</span> <a asp-action="LogIn" class="option-link">Login</a></p>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

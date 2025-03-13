@@ -17,109 +17,109 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Backend
 build_property.RootNamespace = Backend
-build_property.ProjectDir = C:\Users\HomePC\Documents\Expense-Tracker\Backend\
+build_property.ProjectDir = C:\Users\Z.BOOK\OneDrive\Documents\CMT307 .Net Programming\Expense-Tracker\Backend\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\HomePC\Documents\Expense-Tracker\Backend
+build_property.MSBuildProjectDirectory = C:\Users\Z.BOOK\OneDrive\Documents\CMT307 .Net Programming\Expense-Tracker\Backend
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/AdminPanel/AdminPanel.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/AdminPanel/AdminPanel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxBZG1pblBhbmVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/DashBoard/Index.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/DashBoard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/DashBoard/_ExpenseForm.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/DashBoard/_ExpenseForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXF9FeHBlbnNlRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/DashBoard/_ExpenseTable.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/DashBoard/_ExpenseTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXF9FeHBlbnNlVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/DashBoard/_IncomeForm.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/DashBoard/_IncomeForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXF9JbmNvbWVGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/DashBoard/_IncomeTable.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/DashBoard/_IncomeTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXF9JbmNvbWVUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Home/Index.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Home/Login.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Home/Privacy.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Home/Signup.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Home/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Home/_ExpenseForm.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Home/_ExpenseForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRXhwZW5zZUZvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Home/_ExpenseTable.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Home/_ExpenseTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRXhwZW5zZVRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Home/_IncomeForm.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Home/_IncomeForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfSW5jb21lRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Home/_IncomeTable.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Home/_IncomeTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfSW5jb21lVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Shared/Error.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Tracker/Index.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Tracker/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhY2tlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Tracker/Welcome.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Tracker/Welcome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhY2tlclxXZWxjb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/User/index.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/User/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/User/LogIn.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/User/LogIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dJbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/User/Register.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/User/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/_ViewImports.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/_ViewStart.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HomePC/Documents/Expense-Tracker/Backend/Views/Shared/_Layout.cshtml]
+[C:/Users/Z.BOOK/OneDrive/Documents/CMT307 .Net Programming/Expense-Tracker/Backend/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-d59tb7l7w9

@@ -10,7 +10,7 @@ namespace Backend.Models
         public int CategoryId { get; set; }
 
         [ForeignKey("User")]
-        public int UserId { get; set; } // Each user has their own categories
+        public string Id { get; set; } // Each user has their own categories
 
         [Required, MaxLength(100)]
         public string Name { get; set; }
