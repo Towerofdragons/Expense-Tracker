@@ -102,7 +102,8 @@ namespace Backend.Controllers
 
     public IActionResult LogIn()
     {
-      return View();
+        ViewBag.HideLogout = true; // Tells the layout to hide the button
+        return View();
     }
 
     [HttpPost]

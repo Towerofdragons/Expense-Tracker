@@ -56,6 +56,15 @@ public class HomeController : Controller
         return PartialView("_ExpenseTable");
     }
 
+    public IActionResult EditExpenseForm()
+    {
+        return PartialView("_EditExpenseForm");
+    }
+
+    public IActionResult EditIncomeForm()
+    {
+        return PartialView("_EditIncomeForm");
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
