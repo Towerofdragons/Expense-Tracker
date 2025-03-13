@@ -11,7 +11,11 @@
 <body>
     <header class="navbar border-bottom box-shadow mb-3">
         <h1>Expense Tracker</h1>
-        <button class="logout">Log Out</button>
+        @if (ViewBag.HideLogout == null || ViewBag.HideLogout == false)
+        {
+            <button class="logout">Log Out</button>
+        }
+        
     </header>
 
     <main>
@@ -24,7 +28,7 @@
         </div>
     </footer>
 
-    @* <script src="~/js/custom.js" asp-append-version="true"></script> *@
+    <script src="~/js/custom.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
