@@ -39,6 +39,11 @@ $(document).on("click", ".edit-expense-button", function (e) {
     
 });
 
+$(document).on("click", ".cancel-button, .overlay ", function () {
+    $(".overlay").fadeOut();
+    $(".edit-modal").fadeOut();
+})
+
 $(document).on("click", ".edit-income-button", function (e) {
     e.preventDefault();
     // Fetch the Edit Expense Form Partial View
@@ -49,7 +54,7 @@ $(document).on("click", ".edit-income-button", function (e) {
             $("#editIncomeContainer").html(data);//adds the modal and overlay in the container
             // Show overlay and modal
             $(".overlay").fadeIn();
-            $(".edit-modal").fadeIn();
+            $(".edit-income-modal").fadeIn();
         },
         error: function () {
             alert("Failed to load edit form.");
@@ -60,7 +65,7 @@ $(document).on("click", ".edit-income-button", function (e) {
 
 $(document).on("click", ".cancel-button, .overlay ", function () {
     $(".overlay").fadeOut();
-    $(".edit-modal").fadeOut();
+    $(".edit-income-modal").fadeOut();
 });
 
 
