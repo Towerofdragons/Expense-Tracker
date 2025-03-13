@@ -22,6 +22,24 @@ header {
     padding: 5px 20px;
     width: 100%;
     margin: 0 auto;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+.logout {
+    width: 15%;
+    height:50px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-family: "K2D", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #000;
+}
+.logout:hover {
+    background-color: #270dba;
 }
 
 /*Infotabs*/
@@ -131,6 +149,30 @@ header {
 .hidden {
     display: none;
 }
+/* Dark overlay covering entire screen when modal appears */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    display: none; /* hidden by default */
+    z-index: 999; /* on top of normal content */
+}
+
+.modal {
+    border-radius: 10px;
+    padding: 60px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* hidden by default */
+    z-index: 1000; /* above the overlay */
+}
 
 .form-container {
     border-radius: 10px;
@@ -188,7 +230,7 @@ label {
     padding: 30px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     background-color: #f0f0f0;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .table-title {
@@ -203,6 +245,7 @@ label {
 .table {
     width: 100%;
     padding: 0 10px;
+    font-family: "K2D", sans-serif;
 }
 
 th, td {
@@ -228,13 +271,13 @@ th {
     color: black;
 }
 
-    .edit-icon:hover {
-        color: #270dba;
-    }
+.edit-icon:hover {
+    color: #270dba;
+}
 
-    .del-icon:hover {
-        color: #CA0808
-    }
+.del-icon:hover {
+    color: #CA0808
+}
 
 /*Sign up/ Login Page*/
 .signup-page, .login-page {
@@ -278,9 +321,9 @@ th {
     gap: 10px;
 }
 
-    .form-field .form-input {
-        width: 100%;
-    }
+.form-field .form-input {
+    width: 100%;
+}
 
 .signup-button, .login-button {
     width: 100%;
@@ -306,6 +349,11 @@ th {
 .option-link {
     color: #270dba;
     text-decoration: none;
+}
+
+/*Footer*/
+.container{
+    text-align:center;
 }
 
 /*Responsiveness*/
