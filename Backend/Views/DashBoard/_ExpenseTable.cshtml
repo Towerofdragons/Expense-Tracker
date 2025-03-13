@@ -69,11 +69,15 @@
                             <!--a asp-controller="Expense" asp-action="Delete" asp-route-id="@expense.ExpenseId" title="Delete">
                                 <i class="fa-solid fa-trash" title="Delete"></i>
                             </a-->
-                             <form asp-controller="Expense" asp-action="Delete" asp-route-id="@expense.ExpenseId" method="post">
+                             <!--form asp-controller="Expense" asp-action="Delete" asp-route-id="@expense.ExpenseId" method="post">
                                 <button style="border:none" type="submit" class="del-icon" title="Delete">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
-                            </form>
+                            </form-->
+
+                            <button style="border:none" type="submit" class="del-icon delete-expense" title="Delete" data-id="@expense.ExpenseId">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
                         </div>
                        
                     </div>

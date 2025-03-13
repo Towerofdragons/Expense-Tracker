@@ -18,8 +18,7 @@ public class DashboardController : Controller
       _context =  context;
     }
 
-    public IActionResult Index()
-    {
+    public IncomeExpenses GetModel(){
         var Expenses = _context.Expense.ToList();
         var Incomes = _context.Income.ToList();
 
@@ -45,10 +44,27 @@ public class DashboardController : Controller
             Income = _context.Income.ToList()
         };
 
-        return View(model);
+        return model;
+        
     }
 
-   
+    public IActionResult Index()
+    {
+        return View(this.GetModel());
+    }
+
+    public IActionResult IncomeTable()
+    {
+        var model = this.GetModel();
+        return PartialView("_IncomeTable", model);
+    }
+
+    public IActionResult ExpenseTable()
+    {
+        var model = this.GetModel();
+        return PartialView("_ExpenseTable", model);
+    }
+
 
     
 }

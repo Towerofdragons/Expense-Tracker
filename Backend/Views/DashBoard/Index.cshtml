@@ -49,21 +49,21 @@
         <div class="tab">
             <div class="tab-content">
                 <h2 class="tab-heading">Total Income</h2>
-                <p class="tab-value">Sh @Model.TotalIncome</p> <!-- TODO What if there are no income records? -->
+                <p class="tab-value">Sh @(Model?.TotalIncome ?? 0)</p> <!-- TODO What if there are no income records? -->
             </div>
         </div>
 
         <div class="tab">
             <div class="tab-content">
                 <h2 class="tab-heading">Total Expenses</h2>
-                <p class="tab-value">Sh @Model.TotalExpense</p>
+                <p class="tab-value">Sh @(Model?.TotalExpense ?? 0)</p>
             </div>
         </div>
 
         <div class="tab">
             <div class="tab-content">
                 <h2 class="tab-heading">Balance</h2>
-                <p class="tab-value">Sh @(Model.TotalIncome - Model.TotalExpense)</p>
+                <p class="tab-value">Sh @((Model?.TotalIncome ?? 0) - (Model?.TotalExpense ?? 0))</p>
             </div>
         </div>
     </div>
@@ -103,8 +103,8 @@
 
     @* Income Table section *@
     <div class="table-container">
-        @await Html.PartialAsync("_IncomeTable", Model) @* Load Income Table by Default*@
-        @await Html.PartialAsync("_ExpenseTable", Model)@* Load Expense Table after Income*@
+        @await Html.PartialAsync("_IncomeTable") @* Load Income Table by Default*@
+        @await Html.PartialAsync("_ExpenseTable")@* Load Expense Table after Income*@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -139,8 +139,99 @@
 
         });*/ 
 
+    
+
        $(document).ready(function(){
 
+            function reloadCharts() {
+                $.get("/Dashboard/GetChartData", function(response) {
+                    // Update Pie Chart
+                    pieChart.options.data[0].dataPoints = response.pieData;
+                    pieChart.render();
+
+                    // Update Bar Chart
+                    barChart.options.data[0].dataPoints = response.barData;
+                    barChart.render();
+                });
+            }
+
+            function reloadTables() {
+                $.ajax({
+                    url: "/Dashboard/IncomeTable",
+                    type: "GET",
+                    cache: false,
+                    success: function (data) {
+                        $("#income-table").html(data); // Replace table content
+                    }
+                });
+
+                $.ajax({
+                    url: "/Dashboard/ExpenseTable",
+                    type: "GET",
+                    cache: false,
+                    success: function (data) {
+                        $("#expense-table").html(data); // Replace table content
+                    }
+                });
+
+                reloadCharts();
+    
+            }
+
+            // Handle form submission for income
+            $("#income-form").on("submit", function(e) {
+                e.preventDefault();
+                var formData = $(this).serialize();
+
+                $.post("/Income/Add", formData, function(response) {
+                    reloadTables(); // Refresh tables after adding income
+                    $("#income-form")[0].reset(); // Reset form
+                });
+            });
+
+            // Handle form submission for expense
+            $("#expense-form").on("submit", function(e) {
+                e.preventDefault();
+                var formData = $(this).serialize();
+
+                $.post("/Expense/Add", formData, function(response) {
+                    reloadTables(); // Refresh tables after adding expense
+                    $("#expense-form")[0].reset(); // Reset form
+                });
+            });
+
+            // Delete income
+            $(document).on("click", ".delete-income", function () {
+                var incomeId = $(this).data("id");
+
+                if (confirm("Are you sure you want to delete this income?")) {
+                    $.post("/Income/Delete", { id: incomeId }, function (response) {
+                        
+                            reloadTables(); // Refresh table after deletion
+                        
+                    }).fail(function (xhr) {
+                        alert("Failed to delete income. Please try again.");
+                    });
+                }
+            });
+
+            // Delete expense
+            $(document).on("click", ".delete-expense", function () {
+                var expenseId = $(this).data("id");
+
+                if (confirm("Are you sure you want to delete this expense?")) {
+                    $.post("/Expense/Delete", { id: expenseId }, function (response) {
+                        
+                    reloadTables(); // Refresh table after deletion
+                        
+                    }).fail(function (xhr) {
+                        alert("Failed to delete expense. Please try again.");
+                    });
+                }
+            });
+
+
+            // tab Switching functionality
             $("#income-form, #income-table").show();
             $("#expense-form, #expense-table").hide();
 
@@ -201,9 +292,10 @@
                     indexLabelFontSize: 16,
                     color: "#8A7DFF",
                     dataPoints: [
-                        { label: "Income", y: @Model.TotalIncome },
-                        { label: "Expense", y: @Model.TotalExpense},
-                        { label: "Balance", y: @(Model.TotalIncome - Model.TotalExpense)}
+                        { label: "Income", y: @(Model?.TotalIncome ?? 0) },
+                        { label: "Expense", y: @(Model?.TotalExpense ?? 0)},
+                        { label: "Balance", y: @((Model?.TotalIncome ?? 0) - (Model?.TotalExpense ?? 0))}
+
                     ]
                 }]
             });

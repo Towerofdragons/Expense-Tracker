@@ -17,14 +17,15 @@ namespace Backend.Controllers
   public class UserController : Controller
   {
     private readonly TrackerDBContext _context;
-
-    public  UserController (TrackerDBContext context)
+    private readonly ILogger<UserController> _logger;
+    public  UserController (TrackerDBContext context, ILogger<UserController> logger)
     {
       _context =  context;
+      _logger = logger;
     }
 
     [Authorize(Roles = "Admin")]
-    public IActionResult ViewUserIndex()
+    public IActionResult Index()
     {
         var users = _context.Users.ToList();
         return View(users);
@@ -35,19 +36,38 @@ namespace Backend.Controllers
     {
       return View();
     }
-  [HttpPost]
-    public IActionResult Register(User user)
-    { // TODO
-      if (ModelState.IsValid)
-      {
-        user.UserId =  _context.Users.Count() + 1; // TODO -- Temp since in memory db doesn't auto increment
-        _context.Users.Add(user);
-        _context.SaveChanges();
 
-        return RedirectToAction("LogIn");
-      }
-      return View(user);
+[HttpPost]
+    public IActionResult Register(User user)
+    {
+        if (ModelState.IsValid)
+        {
+            // Check if email is already taken
+            if (_context.Users.Any(u => u.Email == user.Email.ToLower()))
+            {
+                ModelState.AddModelError("Email", "This email is already registered.");
+                return View(user);
+            }
+
+            user.UserId = _context.Users.Count() + 1; // Temporary fix if in-memory DB doesn't auto-increment
+            user.Email = user.Email.ToLower();
+            _context.Users.Add(user);
+            _context.SaveChanges();
+
+            TempData["SuccessMessage"] = "Registration successful! You can now log in.";
+            return View();
+        }
+        
+        //log information if model is invalid
+        _logger.LogWarning("User registration failed due to invalid model state.");
+        foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+        {
+            _logger.LogWarning($"Validation Error: {error.ErrorMessage}");
+        }
+
+        return View(user);
     }
+
 
     public IActionResult LogIn()
     {
@@ -58,7 +78,7 @@ namespace Backend.Controllers
     public async Task<IActionResult> LogIn(User user)
     {
       var currentuser = await _context.Users
-          .FirstOrDefaultAsync(u => u.Email == user.Email && u.Password == user.Password);
+          .FirstOrDefaultAsync(u => u.Email.ToLower() == user.Email.ToLower() && u.Password == user.Password);
 
       Console.WriteLine(currentuser);
       if (currentuser != null)
@@ -70,7 +90,7 @@ namespace Backend.Controllers
               new Claim("UserId", currentuser.UserId.ToString()) // Custom claim for User ID
           };
 
-          // ✅ Ensure role claim is added BEFORE creating the ClaimsIdentity
+          //  Ensure role claim is added BEFORE creating the ClaimsIdentity
           if (!string.IsNullOrEmpty(currentuser.Role))
           {
               claims.Add(new Claim(ClaimTypes.Role, currentuser.Role));
@@ -93,7 +113,7 @@ namespace Backend.Controllers
           //  Redirect based on role
           if (currentuser.Role == "Admin") 
           {
-              return RedirectToAction("AdminDashboard", "Dashboard");
+              return RedirectToAction("Index", "User");
           }
           
           return RedirectToAction("Index", "Dashboard");

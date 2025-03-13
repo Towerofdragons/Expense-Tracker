@@ -101,7 +101,7 @@ public class HomeController : Controller
                     Console.WriteLine($"Field: {key} - Error: {error.ErrorMessage}");
                 }
             }
-            return RedirectToAction("Index", "Dashboard", income);
+            return RedirectToAction("Index", "Dashboard");
         }
 
     
@@ -203,7 +203,7 @@ public class HomeController : Controller
                     Console.WriteLine($"Field: {key} - Error: {error.ErrorMessage}");
                 }
             }
-            return RedirectToAction("Index", "Dashboard", expense);
+            return RedirectToAction("Index", "Dashboard");
         }
 
         // Edit Expense - GET

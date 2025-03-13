@@ -101,14 +101,18 @@
                         </div>
 
                         <div class="del-icon">
-                            <form asp-controller="Expense" asp-action="Delete" asp-route-id="@income.IncomeId" method="post">
+                            <!--form asp-controller="Expense" asp-action="Delete" asp-route-id="@income.IncomeId" method="post">
                                 <button style="border:none" type="submit" class="del-icon" title="Delete">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
-                            </form>
+                            </form-->
                             <!--a asp-controller="Income" asp-action="Delete" asp-route-id="@income.IncomeId" title="Delete">
                                 <i class="fa-solid fa-trash" title="Delete"></i>
                             </a-->
+
+                            <button style="border:none" type="submit" class="del-icon delete-income" title="Delete" data-id="@income.IncomeId">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
                         </div>
                     </div>
                 </td>
