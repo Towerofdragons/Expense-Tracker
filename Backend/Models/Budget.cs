@@ -10,7 +10,7 @@ namespace Backend.Models
         public int BudgetId { get; set; }
 
         [ForeignKey("User")]
-        public int UserId { get; set; }
+        public string Id { get; set; }
 
         [ForeignKey("Category")]
         public int CategoryId { get; set; }

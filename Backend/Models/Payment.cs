@@ -10,7 +10,7 @@ namespace Backend.Models
         public int PaymentId { get; set; }
 
         [ForeignKey("User")]
-        public int UserId { get; set; }
+        public string Id { get; set; }
 
         [Required]
         public decimal Amount { get; set; }

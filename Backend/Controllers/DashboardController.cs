@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Backend.Models;
 
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
 
 namespace Backend.Controllers;
 
@@ -12,15 +14,20 @@ public class DashboardController : Controller
 {
 
     private readonly TrackerDBContext _context;
-
-    public  DashboardController (TrackerDBContext context)
+    private readonly UserManager<User> _userManager;
+    public  DashboardController (TrackerDBContext context, UserManager<User> userManager)
     {
       _context =  context;
+      _userManager = userManager;
     }
 
-    public IncomeExpenses GetModel(){
-        var Expenses = _context.Expense.ToList();
-        var Incomes = _context.Income.ToList();
+    public async Task<IncomeExpenses> GetModel(){
+        var userId = User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value;
+    
+
+
+        var Expenses = _context.Expense.Where(e => e.Id.ToString() == userId).ToList();
+        var Incomes = _context.Income.Where(e => e.Id.ToString() == userId).ToList();
 
         decimal TotalIncomes = 0;
         decimal TotalExpenses = 0;
@@ -40,28 +47,32 @@ public class DashboardController : Controller
         {
             TotalExpense = TotalExpenses,
             TotalIncome = TotalIncomes,
-            Expense = _context.Expense.ToList(),
-            Income = _context.Income.ToList()
+            Expense = Expenses,
+            Income = Incomes
         };
 
         return model;
         
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View(this.GetModel());
+        string userName = User.Identity.IsAuthenticated ? User.Identity.Name : "Guest";
+        ViewBag.UserName = userName;
+
+        var model = await GetModel();
+        return View(model);
     }
 
-    public IActionResult IncomeTable()
+    public async Task<IActionResult> IncomeTable()
     {
-        var model = this.GetModel();
+        var model = await GetModel();
         return PartialView("_IncomeTable", model);
     }
 
-    public IActionResult ExpenseTable()
+    public async Task<IActionResult> ExpenseTable()
     {
-        var model = this.GetModel();
+        var model = await GetModel();
         return PartialView("_ExpenseTable", model);
     }
 

@@ -8,19 +8,19 @@ namespace Backend.Models
 {
     public class User : IdentityUser
     {
-        [Key]
-        public int UserId { get; set; }
+        // [Key]
+        // public int UserId { get; set; }
 
         public bool IsActive { get; set; } = true;
 
         [Required, MaxLength(100)]
         public string Name { get; set; }
 
-        [Required, EmailAddress]
-        public override string Email { get; set; }
+        // [Required, EmailAddress]
+        // public override string Email { get; set; }
 
-        [Required, MaxLength(255)]
-        public string Password { get; set; }
+        // [Required, MaxLength(255)]
+        // public string Password { get; set; }
 
         [Required]
         public string Role { get; set; } = "User"; //Default role to "User"
