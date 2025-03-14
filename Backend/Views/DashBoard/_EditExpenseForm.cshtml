@@ -4,7 +4,7 @@
 
 <div  class="edit-modal">
     <h2 class="table-title">EDIT EXPENSE</h2>
-    <form class="edit-expense-form" id="edit-expense-form">
+    <form class="edit-expense-form"  id="edit-expense-form" method="post">
 
         <input type="hidden" id="expense-id" name="ExpenseId" value="@Model.ExpenseId" />
     
@@ -23,9 +23,9 @@
         
             <div class="myform-group">
             <label for="CategoryId" >Category</label>
-            <select name="CategoryId"  class="form-input">
+            <select name="CategoryId" id="CategoryId"  class="form-input">
 
-                @{var categories = ViewData["Categories"] as List<Category>;}
+                @{ var categories = ViewData["Categories"] as List<Category>;}
 
                 <option value="">-- Select a Category --</option> <!-- Default option -->
 
@@ -33,11 +33,13 @@
                 {
                     @foreach (var category in categories)
                     {
-                        <option value="@category.CategoryId">@category.Name</option>
+                        <option value="@category.CategoryId"
+                        selected="@(category.CategoryId == Model.CategoryId ? "selected" : null)"
+                        >@category.Name</option>
                     }
                 }
             </select>
-        </div>
+
         
         <div class="myform-row">
             <div class="myform-group">

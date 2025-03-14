@@ -98,6 +98,7 @@ public class HomeController : Controller
             //var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             //Console.WriteLine(ClaimTypes.Name);
             var userID = User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value;
+            //var userID = _userManager.GetUserId(User);
 
             if (string.IsNullOrEmpty(userID))
             {
@@ -169,7 +170,7 @@ public class HomeController : Controller
                 return RedirectToAction("Index", "Dashboard");
             }
 
-            return RedirectToAction("EditIncomeForm", "Dashboard",updatedIncome);
+            return RedirectToAction("Index", "Dashboard");
         }
 
         // Delete Income - GET
@@ -287,7 +288,7 @@ public class HomeController : Controller
                 return RedirectToAction("Index", "Dashboard", expense);
             }
 
-            return View(updatedExpense);
+            return RedirectToAction("Index", "Dashboard");
         }
 
         // Delete Expense - GET

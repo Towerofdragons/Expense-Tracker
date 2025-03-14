@@ -88,8 +88,11 @@ public class DashboardController : Controller
         return PartialView("_ExpenseTable", model);
     }
 
-    public IActionResult EditExpenseForm(int Id)
+    public async Task<IActionResult> EditExpenseForm(int Id)
     {   
+        var categories = await _context.Categories.ToListAsync();
+        ViewData["Categories"] = categories ?? new List<Category>();
+    
         var expense = _context.Expense.Find(Id);
             if (expense == null)
             {
@@ -98,8 +101,10 @@ public class DashboardController : Controller
         return PartialView("_EditExpenseForm", expense);
     }
 
-    public IActionResult EditIncomeForm(int Id)
+    public async Task<IActionResult> EditIncomeForm(int Id)
     {
+        var categories = await _context.Categories.ToListAsync();
+        ViewData["Categories"] = categories ?? new List<Category>();
         var income = _context.Income.Find(Id);
         if (income == null)
         {

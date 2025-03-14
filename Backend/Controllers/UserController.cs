@@ -39,6 +39,51 @@ namespace Backend.Controllers
     }
 
 
+    // public async Task<IActionResult> EditUser()
+    // {
+    //     return PartialView("_EditUserPartial");
+    // }
+
+    [HttpPost]
+    public async Task<IActionResult> EditUser(User model)
+    {
+        if (!ModelState.IsValid)
+        {
+            Console.WriteLine("Model not set");
+            foreach (var key in ModelState.Keys)  // TODO
+            {
+                foreach (var error in ModelState[key].Errors)
+                {
+                    Console.WriteLine($"Field: {key} - Error: {error.ErrorMessage}");
+                }
+            }
+
+            return BadRequest("Invalid form submission.");
+        }
+
+        var user = await _userManager.FindByIdAsync(model.Id);
+        if (user == null)
+        {
+            return NotFound("User not found.");
+        }
+
+        user.Name = model.Name;
+        user.Email = model.Email;
+        user.Role = model.Role;
+        user.IsActive = model.IsActive;
+
+        var result = await _userManager.UpdateAsync(user);
+        if (!result.Succeeded)
+        {
+            return BadRequest("Failed to update user.");
+        }
+
+
+
+        return RedirectToAction("Index");
+    }
+
+
     public IActionResult Register()
     {
       return View();

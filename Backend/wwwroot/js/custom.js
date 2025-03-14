@@ -18,6 +18,7 @@ $(document).ready(function(){
         $("#income-tab").removeClass("active");
     });
 
+    
 
     function reloadCharts() {
         $.get("/Dashboard/GetChartData", function(response) {
@@ -178,6 +179,26 @@ $(document).on("submit", "#edit-income-form", function (e) {
         },
         error: function () {
             alert("Failed to update income.");
+        }
+    });
+});
+
+
+$(document).on("submit", "#edit-expense-form", function (e) {
+    e.preventDefault();
+
+    var formData = $(this).serialize();
+
+    $.ajax({
+        url: "/Expense/Edit",
+        type: "POST",
+        data: formData,
+        success: function (response) {
+            alert("Expense updated successfully!");
+            location.reload(); // Refresh page or update UI dynamically
+        },
+        error: function () {
+            alert("Failed to update expense.");
         }
     });
 });
