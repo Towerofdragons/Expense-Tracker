@@ -106,59 +106,6 @@ namespace Backend.Controllers
         return View();
     }
 
-    // [HttpPost]
-    // public async Task<IActionResult> LogIn(User user)
-    // {
-    //   var currentuser = await _context.Users
-    //       .FirstOrDefaultAsync(u => u.Email.ToLower() == user.Email.ToLower() && u.Password == user.Password);
-
-    //   Console.WriteLine(currentuser);
-    //   if (currentuser != null)
-    //   {
-    //     var claims = new List<Claim>
-    //     {
-    //         new Claim(ClaimTypes.Name, currentuser.Name),
-    //         new Claim(ClaimTypes.Email, currentuser.Email),
-    //         new Claim("UserId", currentuser.UserId.ToString()) // Custom claim for User ID
-    //     };
-
-    //     //  Ensure role claim is added BEFORE creating the ClaimsIdentity
-    //     if (!string.IsNullOrEmpty(currentuser.Role))
-    //     {
-    //         claims.Add(new Claim(ClaimTypes.Role, currentuser.Role));
-    //     }
-
-    //     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-    //     var authProperties = new AuthenticationProperties
-    //     {
-    //         IsPersistent = true,  
-    //         ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(30)
-    //     };
-
-    //   await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, 
-    //       new ClaimsPrincipal(claimsIdentity), authProperties);
-
-    //     // await HttpContext.SignInAsync(
-    //     // CookieAuthenticationDefaults.AuthenticationScheme,
-    //     // new ClaimsPrincipal(claimsIdentity), authProperties);
-
-    //     Console.WriteLine($"User Authenticated: {User.Identity.IsAuthenticated}");
-    //     Console.WriteLine($"User Role: {User.FindFirst(ClaimTypes.Role)?.Value}");
-
-    //     //  Redirect based on role
-    //     if (currentuser.Role == "Admin") 
-    //     {
-    //         return RedirectToAction("Index", "User");
-    //     }
-        
-    //     return RedirectToAction("Index", "Dashboard");
-    // }
-
-    // // Login failed
-    // ViewData["ErrorMessage"] = "Invalid email or password";
-    // return View(user);
-    // }
-
     [HttpPost]
     public async Task<IActionResult> LogIn(UserLoginViewModel model)
         {
@@ -211,7 +158,7 @@ namespace Backend.Controllers
   
     public async Task <IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
+            await _signInManager.SignOutAsync();
             return RedirectToAction("Login");
         }
 

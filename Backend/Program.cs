@@ -6,15 +6,16 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure SQL Server connection
-// builder.Services.AddDbContext<ExpenseTrackerDbContext>(options =>
-//     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-// );
+//Configure SQL Server connection
+builder.Services.AddDbContext<TrackerDBContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+));
 
 // Configure In memory db
-builder.Services.AddDbContext<TrackerDBContext>(
-    options => options.UseInMemoryDatabase("TrackerDB")
-);
+/* builder.Services.AddDbContext<TrackerDBContext>(
+     options => options.UseInMemoryDatabase("TrackerDB")
+);*/
 
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<TrackerDBContext>()
@@ -49,7 +50,8 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<TrackerDBContext>();
-    context.Database.EnsureCreated();  // Forces database creation & applies seed data
+    //context.Database.EnsureCreated();  // Forces database creation & applies seed data- in memory db
+    context.Database.Migrate();
 }
 
 

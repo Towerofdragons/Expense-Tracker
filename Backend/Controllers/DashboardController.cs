@@ -5,6 +5,8 @@ using Backend.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Controllers;
 
@@ -26,7 +28,7 @@ public class DashboardController : Controller
     
 
 
-        var Expenses = _context.Expense.Where(e => e.Id.ToString() == userId).ToList();
+        var Expenses = _context.Expense.Include(e => e.Category).Where(e => e.Id.ToString() == userId).ToList();
         var Incomes = _context.Income.Where(e => e.Id.ToString() == userId).ToList();
 
         decimal TotalIncomes = 0;
@@ -58,6 +60,8 @@ public class DashboardController : Controller
     public async Task<IActionResult> Index()
     {
         string userName = User.Identity.IsAuthenticated ? User.Identity.Name : "Guest";
+        var categories = await _context.Categories.ToListAsync();
+        ViewData["Categories"] = categories ?? new List<Category>();
         ViewBag.UserName = userName;
 
         var model = await GetModel();
@@ -73,19 +77,36 @@ public class DashboardController : Controller
     public async Task<IActionResult> ExpenseTable()
     {
         var model = await GetModel();
+        var categories = await _context.Categories.ToListAsync();
+
+        foreach(var category in categories)
+        {
+            Console.WriteLine(category.CategoryId);
+        }
+
+        ViewData["Categories"] = categories ?? new List<Category>();
         return PartialView("_ExpenseTable", model);
     }
 
-    public IActionResult EditExpenseForm()
-    {
-        return PartialView("_EditExpenseForm");
+    public IActionResult EditExpenseForm(int Id)
+    {   
+        var expense = _context.Expense.Find(Id);
+            if (expense == null)
+            {
+                return NotFound();
+            }
+        return PartialView("_EditExpenseForm", expense);
     }
 
-    public IActionResult EditIncomeForm()
+    public IActionResult EditIncomeForm(int Id)
     {
-        return PartialView("_EditIncomeForm");
+        var income = _context.Income.Find(Id);
+        if (income == null)
+        {
+            return NotFound();
+        }
+        return PartialView("_EditIncomeForm", income);
+
     }
-
-
 
 }

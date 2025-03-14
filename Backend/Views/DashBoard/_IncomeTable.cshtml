@@ -85,6 +85,8 @@
                 </td>
             </tr> -->
 
+@if (Model.Income != null && Model.Income.Any())
+{
     @foreach (var income in Model.Income)
     {
             <tr>
@@ -94,7 +96,7 @@
                 <td>@income.Description</td>
                 <td>
                     <div class="actions">
-                            <button style="border:none" class="edit-income-button">
+                            <button style="border:none" class="edit-income-button" data-id="@income.IncomeId">
                         <div class="edit-icon">
                             <a asp-controller="Income" asp-action="Edit" asp-route-id="@income.IncomeId" title="Edit" style="color:black">
                                 <i class="fa-solid fa-pen" title="Edit"></i>        <!-- TODO Add dynamic links TODO edit-icon and Delete-->
@@ -122,8 +124,12 @@
             </tr>
 
     }
-
-
+}
+else
+{   <tr>
+    <p>You do not have any recorded incomes.</p>
+    </tr>
+}
 
         </tbody>
     </table>

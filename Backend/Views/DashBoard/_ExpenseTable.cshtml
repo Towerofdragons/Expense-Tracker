@@ -50,16 +50,18 @@
                 </td>
             </tr>   -->
 
+@if (Model.Expense != null && Model.Expense.Any())
+{
      @foreach (var expense in Model.Expense)
       {
             <tr>
                 <td>@expense.ExpenseDate</td>
-                <td>@expense.Category </td>
+                <td>@expense.Category?.Name </td>
                 <td>Sh @expense.Amount</td>
                 <td>@expense.Description</td>
                 <td>
                     <div class="actions">
-                            <button style="border:none" class="edit-expense-button">
+                            <button style="border:none" class="edit-expense-button" data-id="@expense.ExpenseId">
                             <div class="edit-icon">
                                 <i class="fa-solid fa-pen" title="Edit"></i>        <!-- TODO Add dynamic links TODO edit-icon and Delete-->
 
@@ -86,7 +88,12 @@
             </tr>
 
         }
-
+}
+else{
+    <tr>
+        <p>You do not have any recorded expenses.</p>
+    </tr>
+}
         
         </tbody>
     </table>

@@ -25,10 +25,23 @@
             </select>
         </div>
     *@
-    <div class="myform-row">
+        <div class="myform-row">
          <div class="myform-group">
-            <label for="category">Category</label>
-            <input type="text" id="expense-category" name="Category" class="form-input" />
+            <label for="CategoryId" >Category</label>
+            <select name="CategoryId"  class="form-input">
+
+                @{var categories = ViewData["Categories"] as List<Category>;}
+
+                <option value="">-- Select a Category --</option> <!-- Default option -->
+
+                @if (categories != null)
+                {
+                    @foreach (var category in categories)
+                    {
+                        <option value="@category.CategoryId">@category.Name</option>
+                    }
+                }
+            </select>
         </div>
         <div class="myform-group">
             <label for="notes">Notes</label>
