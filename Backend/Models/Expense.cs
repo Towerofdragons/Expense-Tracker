@@ -16,6 +16,7 @@ namespace Backend.Models
         public int CategoryId { get; set; }
 
         [Required]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Amount { get; set; }
 
         public string? Description { get; set; }

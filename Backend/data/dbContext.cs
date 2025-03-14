@@ -82,6 +82,7 @@ public class TrackerDBContext : IdentityDbContext<User>
             new IdentityUserRole<string> { UserId = testuser.Id, RoleId = "2" }
         );
 
+    /*
     modelBuilder.Entity<Category>().HasData(
         new { CategoryId = 1, Id = "1002", Name = "Salary", Type = "Income" },
         new { CategoryId = 2, Id = "1002", Name = "Groceries", Type = "Expense" },
@@ -118,7 +119,51 @@ public class TrackerDBContext : IdentityDbContext<User>
     modelBuilder.Entity<Report>().HasData(
         new { ReportId = 1, Id = "1002", ReportType = "Monthly", GeneratedAt = DateTime.UtcNow },
         new { ReportId = 2, Id = "2", ReportType = "Yearly", GeneratedAt = DateTime.UtcNow }
-    );
+    ); */
+
+
+
+
+    var fixedDate = new DateTime(2025, 3, 14, 0, 0, 0, DateTimeKind.Utc);
+
+
+        modelBuilder.Entity<Category>().HasData(
+            new { CategoryId = 1, Id = "1002", Name = "Salary", Type = "Income" },
+            new { CategoryId = 2, Id = "1002", Name = "Groceries", Type = "Expense" },
+            new { CategoryId = 3, Id = "1002", Name = "Freelance", Type = "Income" },
+            new { CategoryId = 4, Id = "1002", Name = "Entertainment", Type = "Expense" },
+            new { CategoryId = 5, Id = "1002", Name = "Bills", Type = "Expense" },
+            new { CategoryId = 6, Id = "1002", Name = "Rent", Type = "Expense" },
+            new { CategoryId = 7, Id = "1002", Name = "Self Care", Type = "Expense" },
+            new { CategoryId = 8, Id = "1002", Name = "Emergency Fund", Type = "Expense" },
+            new { CategoryId = 9, Id = "1002", Name = "Savings", Type = "Expense" },
+            new { CategoryId = 10, Id = "1002", Name = "Investments", Type = "Expense" }
+        );
+        modelBuilder.Entity<Income>().HasData(
+            new { IncomeId = 1, Id = "1002", CategoryId = 1, Amount = (decimal)5000.00, Description = "Monthly salary", IncomeDate = fixedDate, CreatedAt = fixedDate },
+            new { IncomeId = 2, Id = "1002", CategoryId = 3, Amount = (decimal)2000.00, Description = "Freelance project", IncomeDate = fixedDate, CreatedAt = fixedDate }
+        );
+
+        modelBuilder.Entity<Expense>().HasData(
+            new { ExpenseId = 1, Id = "1002", CategoryId = 2, Amount = (decimal)2000.00, Description = "Grocery shopping", ExpenseDate = fixedDate, CreatedAt = fixedDate },
+            new { ExpenseId = 2, Id = "1002", CategoryId = 4, Amount = (decimal)500.00, Description = "Movie night", ExpenseDate = fixedDate, CreatedAt = fixedDate }
+        );
+
+        modelBuilder.Entity<Budget>().HasData(
+            new { BudgetId = 1, Id = "1002", CategoryId = 2, Amount = (decimal)1000.00, StartDate = fixedDate, EndDate = fixedDate.AddMonths(1), CreatedAt = fixedDate },
+            new { BudgetId = 2, Id = "1002", CategoryId = 4, Amount = (decimal)500.00, StartDate = fixedDate, EndDate = fixedDate.AddMonths(1), CreatedAt = fixedDate }
+        );
+
+        modelBuilder.Entity<Payment>().HasData(
+            new { PaymentId = 1, Id = "1002", Amount = (decimal)1000.00, PaymentMethod = "Credit Card", PaymentDate = fixedDate, CreatedAt = fixedDate },
+            new { PaymentId = 2, Id = "1002", Amount = (decimal)500.00, PaymentMethod = "Cash", PaymentDate = fixedDate, CreatedAt = fixedDate }
+        );
+
+        modelBuilder.Entity<Report>().HasData(
+            new { ReportId = 1, Id = "1002", ReportType = "Monthly", GeneratedAt = fixedDate },
+            new { ReportId = 2, Id = "1002", ReportType = "Yearly", GeneratedAt = fixedDate }
+        );
+
         
     }
 }

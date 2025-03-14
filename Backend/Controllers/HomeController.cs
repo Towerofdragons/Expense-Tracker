@@ -152,9 +152,9 @@ public class HomeController : Controller
 
         // Edit Income - POST
         [HttpPost]
-        public IActionResult Edit(int id, Income updatedIncome)
+        public IActionResult Edit(Income updatedIncome)
         {
-            var income = _context.Income.Find(id);
+            var income = _context.Income.Find(updatedIncome.IncomeId);
             if (income == null)
             {
                 return NotFound();
@@ -166,10 +166,10 @@ public class HomeController : Controller
                 income.Description = updatedIncome.Description;
                 income.IncomeDate = updatedIncome.IncomeDate;
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Dashboard", income);
+                return RedirectToAction("Index", "Dashboard");
             }
 
-            return View(updatedIncome);
+            return RedirectToAction("EditIncomeForm", "Dashboard",updatedIncome);
         }
 
         // Delete Income - GET

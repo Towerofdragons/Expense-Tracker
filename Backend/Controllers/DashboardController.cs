@@ -88,14 +88,25 @@ public class DashboardController : Controller
         return PartialView("_ExpenseTable", model);
     }
 
-    public IActionResult EditExpenseForm()
-    {
-        return PartialView("_EditExpenseForm");
+    public IActionResult EditExpenseForm(int Id)
+    {   
+        var expense = _context.Expense.Find(Id);
+            if (expense == null)
+            {
+                return NotFound();
+            }
+        return PartialView("_EditExpenseForm", expense);
     }
 
-    public IActionResult EditIncomeForm()
+    public IActionResult EditIncomeForm(int Id)
     {
-        return PartialView("_EditIncomeForm");
+        var income = _context.Income.Find(Id);
+        if (income == null)
+        {
+            return NotFound();
+        }
+        return PartialView("_EditIncomeForm", income);
+
     }
 
 }
