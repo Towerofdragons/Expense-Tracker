@@ -1,0 +1,33 @@
+
+<!-- The Overlay (hidden by default) -->
+<div  class="overlay"></div>
+
+<div  class="edit-users-modal">
+    <h2 class="table-title">EDIT EXPENSE</h2>
+    <form class="edit-expense-form" id="edit-expense-form">
+    
+        <div class="myform-row">
+            <div class="myform-group">
+                <label for="name">Name</label>
+                <input type="text" id="user-name" name="user-name" class="form-input" required />
+            </div>
+            <div class="myform-group">
+                <label for="email">Email</label>
+                <input type="email" id="user-email" name="user-email" class="form-input" required />
+            </div>
+            <div class="myform-group">
+                <label for="status">Status</label>
+                <select id="status" name="status" class="form-input" required>
+                    <option value="1">Active</option>
+                    <option value="2">Deactivated</option>
+                    <!-- Add actual categories dynamically -->
+                </select>
+            </div>
+        </div>
+        
+            <button type="submit" class="edit-form-button">Edit Expense</button>
+            <button type="submit" class="cancel-button">Cancel</button>
+    </form>
+</div>
+
+            

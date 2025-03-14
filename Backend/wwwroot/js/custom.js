@@ -68,6 +68,31 @@ $(document).on("click", ".cancel-button, .overlay ", function () {
     $(".edit-income-modal").fadeOut();
 });
 
+$(document).on("click", ".btn btn-warning btn-sm", function (e) {
+    console.log("Clicked");
+    e.preventDefault();
+    // Fetch the Edit Expense Form Partial View
+    $.ajax({
+        url: "/Dashboard/EditUserForm",
+        type: "GET",
+        success: function (data) {//request is successful, this function executes.
+            $("#editIncomeContainer").html(data);//adds the modal and overlay in the container
+            // Show overlay and modal
+            $(".overlay").fadeIn();
+            $(".edit-users-modal").fadeIn();
+        },
+        error: function () {
+            alert("Failed to load edit form.");
+        }
+    });
+
+});
+
+$(document).on("click", ".cancel-button, .overlay ", function () {
+    $(".overlay").fadeOut();
+    $(".edit-users-modal").fadeOut();
+});
+
 
 
 //Handling charts 
