@@ -7,7 +7,8 @@
     <form class="edit-expense-form"  id="edit-expense-form" method="post">
 
         <input type="hidden" id="expense-id" name="ExpenseId" value="@Model.ExpenseId" />
-    
+        <input type="hidden" name="Id" value="@Model.Id">
+
         <div class="myform-row">
             <div class="myform-group">
                 <label for="expense-date">Date</label>

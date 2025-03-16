@@ -216,20 +216,31 @@ $(document).on("click", ".cancel-button, .overlay ", function () {
 //Handling charts 
 function renderCharts(totalIncome, totalExpense) {
 
+    var dataElement = document.getElementById("data-container");
+
+    
+    var categoryData = JSON.parse(dataElement.dataset.info).Value;
+
+    const categories = categoryData.map(item => item.Category);
+    const amounts = categoryData.map(item => item.TotalAmount);
+
+    const dataPoints =  categories.map((category, index) => (
+        {
+        label: category,
+        y: amounts[index]
+    }
+    ));
+
+
     // Pie Chart Data
     var pieChart = new CanvasJS.Chart("pie-container", {
         animationEnabled: true,
         theme: "light2",
         data: [{
             type: "pie",
-            indexLabel: "{label}: {y}%",
+            indexLabel: "{label}: {y}",
             indexLabelFontSize: 16,
-            dataPoints: [
-                {label: "Rent", y: 20},
-                {label: "Groceries", y: 30},
-                {label: "School Fees", y: 25 },
-                {label: "Energy", y: 25}
-            ]   
+            dataPoints: dataPoints
         }]
     });
 
@@ -244,7 +255,7 @@ function renderCharts(totalIncome, totalExpense) {
         },
         data: [{
             type: "column",
-            indexLabel: "{y}",
+            indexLabel: "{y}%",
             indexLabelFontSize: 16,
             color: "#8A7DFF",
             dataPoints: [

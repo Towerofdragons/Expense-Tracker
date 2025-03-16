@@ -4,6 +4,8 @@ using Backend.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+
 using System.Security.Claims;
 
 namespace Backend.Controllers;
@@ -158,16 +160,30 @@ public class HomeController : Controller
             var income = _context.Income.Find(updatedIncome.IncomeId);
             if (income == null)
             {
+                Console.WriteLine($"Income with ID {updatedIncome.IncomeId} not found.");
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
+                income.IncomeDate = updatedIncome.IncomeDate;
                 income.Amount = updatedIncome.Amount;
                 income.Description = updatedIncome.Description;
                 income.IncomeDate = updatedIncome.IncomeDate;
+                _context.Entry(income).State = EntityState.Modified;
                 _context.SaveChanges();
+                Console.WriteLine("Model edited!");
                 return RedirectToAction("Index", "Dashboard");
+            }
+            else{
+                Console.WriteLine("Model not edited"); // TODO
+                foreach (var key in ModelState.Keys)
+                {
+                    foreach (var error in ModelState[key].Errors)
+                    {
+                        Console.WriteLine($"Field: {key} - Error: {error.ErrorMessage}");
+                    }
+                }
             }
 
             return RedirectToAction("Index", "Dashboard");
@@ -261,6 +277,7 @@ public class HomeController : Controller
         public IActionResult Edit(int id)
         {
             var expense = _context.Expense.Find(id);
+            Console.WriteLine($"Expense with ID {id} not found.");
             if (expense == null)
             {
                 return NotFound();
@@ -272,20 +289,37 @@ public class HomeController : Controller
         [HttpPost]
         public IActionResult Edit(string id, Expense updatedExpense)
         {
-            var expense = _context.Expense.Find(id);
+            var expense = _context.Expense.Find(updatedExpense.ExpenseId);
             if (expense == null)
             {
+                Console.WriteLine($"Expense with ID {updatedExpense.ExpenseId} not found.");
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
-                expense.Id = id;
+                Console.WriteLine($"Amount: {updatedExpense.Amount}, Desc: {updatedExpense.Description}\n\n");
+
+                expense.ExpenseDate = updatedExpense.ExpenseDate;
+                expense.CategoryId = updatedExpense.CategoryId;
                 expense.Amount = updatedExpense.Amount;
                 expense.Description = updatedExpense.Description;
                 expense.ExpenseDate = updatedExpense.ExpenseDate;
+                _context.Entry(expense).State = EntityState.Modified;
                 _context.SaveChanges();
+                Console.WriteLine("Model edited!");
+
                 return RedirectToAction("Index", "Dashboard", expense);
+            }
+            else{
+                Console.WriteLine("Model not edited"); // TODO
+                foreach (var key in ModelState.Keys)
+                {
+                    foreach (var error in ModelState[key].Errors)
+                    {
+                        Console.WriteLine($"Field: {key} - Error: {error.ErrorMessage}");
+                    }
+                }
             }
 
             return RedirectToAction("Index", "Dashboard");

@@ -28,8 +28,8 @@ public class DashboardController : Controller
     
 
 
-        var Expenses = _context.Expense.Include(e => e.Category).Where(e => e.Id.ToString() == userId).ToList();
-        var Incomes = _context.Income.Where(e => e.Id.ToString() == userId).ToList();
+        var Expenses = await _context.Expense.Include(e => e.Category).Where(e => e.Id.ToString() == userId).ToListAsync();
+        var Incomes = await _context.Income.Where(e => e.Id.ToString() == userId).ToListAsync();
 
         decimal TotalIncomes = 0;
         decimal TotalExpenses = 0;
@@ -57,10 +57,28 @@ public class DashboardController : Controller
         
     }
 
+    public async Task<IActionResult> CategoriesChartData()
+    {
+        // Group income/expenses by category and sum amounts
+        var categoryData = await _context.Expense
+            .GroupBy(e => e.Category.Name)
+            .Select(g => new 
+            {
+                Category = g.Key,
+                TotalAmount = g.Sum(e => e.Amount)
+            })
+            .ToListAsync();
+
+        return Json(categoryData); // Returns JSON for JavaScript to consume
+
+    }
+
     public async Task<IActionResult> Index()
     {
         string userName = User.Identity.IsAuthenticated ? User.Identity.Name : "Guest";
         var categories = await _context.Categories.ToListAsync();
+        
+        ViewData["chartData"] = await CategoriesChartData();
         ViewData["Categories"] = categories ?? new List<Category>();
         ViewBag.UserName = userName;
 
